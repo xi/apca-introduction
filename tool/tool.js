@@ -61,7 +61,6 @@ var makeGradient = function(scores) {
     'hsl(40, 100%, 45%)',
     'hsl(80, 60%, 45%)',
     'hsl(95, 60%, 41%)',
-    'hsl(-70, 80%, 40%)',
   ];
 
   var stops = [];
