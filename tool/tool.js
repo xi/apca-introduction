@@ -8,6 +8,21 @@ var apcaGradient = document.querySelector('#apcaGradient');
 var apcaOutput = document.querySelector('#apcaOutput');
 var wcag2Gradient = document.querySelector('#wcag2Gradient');
 var wcag2Output = document.querySelector('#wcag2Output');
+var canvas = document.createElement('canvas');
+var ctx = canvas.getContext('2d');
+var favicon = document.querySelector('link[rel="shortcut icon"]');
+
+var setFavicon = function(bg, fg) {
+  ctx.clearRect(0, 0, 16, 16);
+
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, 8, 16);
+
+  ctx.fillStyle = fg;
+  ctx.fillRect(8, 0, 8, 16);
+
+  favicon.href = canvas.toDataURL();
+};
 
 var alphaBlend = function(fg, bg) {
   return [
@@ -115,6 +130,8 @@ var oninput = function() {
     var bgUrl = encodeURIComponent(bgInput.value);
     location.hash = `${fgUrl}-on-${bgUrl}`;
 
+    setFavicon(bgInput.value, fgInput.value);
+
     var bg = parseColor(getComputedStyle(document.body).backgroundColor);
     var fg = parseColor(getComputedStyle(document.body).color);
 
@@ -141,6 +158,9 @@ var onswap = function() {
   fgInput.value = tmp;
   oninput();
 };
+
+canvas.width = canvas.height = 16;
+document.body.appendChild(canvas);
 
 fgInput.addEventListener('input', oninput);
 bgInput.addEventListener('input', oninput);

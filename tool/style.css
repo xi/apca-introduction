@@ -109,6 +109,10 @@ body {
 	background-color: #ccc;
 }
 
+canvas {
+	display: none;
+}
+
 @media (min-width: 70em) {
 	#form {
 		flex-direction: row;
