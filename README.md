@@ -65,9 +65,9 @@ function contrast(fg, bg) {
   correspond to 45, 60, and 75 in APCA.
 - Compared to WCAG 2.x, APCA reports drastically lower contrast for darker
   colors. It also reports slightly higher contrast for lighter colors.
-- With WCAG 2.x, 40% of all color combinations meet at least level A, 26% meet
-  at least level AA, and 15% meet level AAA. With APCA, only 37% of all color
-  combinations meet at least level A, 23% meet at least level AA, and 11% meet
+- With WCAG 2.x, 29% of all color combinations meet at least level A, 14% meet
+  at least level AA, and 5% meet level AAA. With APCA, only 23% of all color
+  combinations meet at least level A, 11% meet at least level AA, and 3% meet
   level AAA. So APCA is stricter.
 
 ## Examples
