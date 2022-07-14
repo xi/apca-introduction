@@ -81,6 +81,13 @@ the world. If APCA will be part of WCAG 3.0 it will have a huge impact.
 However, currently both WCAG 3.0 and APCA are still in early development.
 Neither is officially recommended by the W3C yet.
 
+Evaluating a contrast algorithm is extremly difficult because contrast
+perception varies from person to person and also depends on the lighing
+conditions. Whether APCA is actually better than WCAG 2.x is therefore hard to
+tell. I personally could not say from the examples above which one works better
+for me. A rigorous scientific evaluation is not yet available
+([issue](https://github.com/w3c/silver/issues/574)).
+
 ## Why this document
 
 The original author has published a lot of information on APCA. So why did I
