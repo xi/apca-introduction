@@ -1,0 +1,62 @@
+body {
+	display: grid;
+	grid-template-columns: repeat(4, min-content);
+	grid-gap: 1rem;
+}
+.example {
+	width: 16rem;
+	background: #eee;
+	font-weight: bold;
+	line-height: 1.4;
+}
+
+.display {
+	padding: 2rem;
+	font-size: 120%;
+	text-align: center;
+}
+
+.output {
+	padding: 1.5rem 2rem 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+label {
+	display: block;
+}
+
+.label {
+	display: inline-block;
+	width: 4.2em;
+	color: #555;
+}
+
+output {
+	display: inline-block;
+	width: 2.2em;
+}
+
+.badge {
+	border-radius: 1em;
+	font-size: 90%;
+	vertical-align: 0.1em;
+	padding: 0 0.6em;
+}
+.badge-0 {
+	background-color: hsl(0, 100%, 40%);
+	color: #fff;
+}
+.badge-1 {
+	background-color: hsl(40, 100%, 45%);
+	color: #000;
+}
+.badge-2 {
+	background-color: hsl(80, 60%, 45%);
+	color: #000;
+}
+.badge-3 {
+	background-color: hsl(95, 60%, 41%);
+	color: #fff;
+}
