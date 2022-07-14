@@ -63,6 +63,12 @@ function contrast(fg, bg) {
   usually work with the absolute value though.
 - WCAG 2.x defined three thresholds: 3:1, 4.5:1, and 7:1. These roughly
   correspond to 45, 60, and 75 in APCA.
+- Compared to WCAG 2.x, APCA reports drastically lower contrast for darker
+  colors. It also reports slightly higher contrast for lighter colors.
+- With WCAG 2.x, 40% of all color combinations meet at least level A, 26% meet
+  at least level AA, and 15% meet level AAA. With APCA, only 37% of all color
+  combinations meet at least level A, 23% meet at least level AA, and 11% meet
+  level AAA. So APCA is stricter.
 
 ## Examples
 
