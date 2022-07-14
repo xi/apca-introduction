@@ -66,7 +66,7 @@ function contrast(fg, bg) {
 
 ## Examples
 
-[![Visual comparison of WCAG 2.x and APCA](https://blog.datawrapper.de/wp-content/uploads/2022/01/Artboard-448-copy-2-1006x1024.png)](https://blog.datawrapper.de/color-contrast-check-data-vis-wcag-apca/)
+[![Visual comparison of WCAG 2.x and APCA](examples/screenshot.png)](https://xi.github.io/apca-introduction/examples/)
 
 ## Status
 
