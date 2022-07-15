@@ -11,7 +11,7 @@ APCA was created by Andrew Somers (Myndex) and is currently being proposed for
 the next major version of the [W3C Accessibility Guidelines
 (WCAG)](https://www.w3.org/TR/wcag-3.0/).
 
-An interactive demo is available at <https://xi.github.io/apca-introduction/>.
+An interactive demo is available at <https://xi.github.io/apca-introduction/tool/>.
 
 ## Algorithm
 

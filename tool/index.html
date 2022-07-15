@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>APCA Contrast</title>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="shortcut icon"  type="image/png" href="about:blank" />
+</head>
+<body>
+	<div id="form">
+		<label>
+			<span>Background</span>
+			<input id="bgInput" value="hsla(200,0%,0%,0.8)" autofocus>
+		</label>
+		<label>
+			<span>Text color</span>
+			<input id="fgInput" value="orangered">
+		</label>
+		<button id="swap">Swap colors</button>
+	</div>
+
+	<div id="output">
+		<label>
+			<span class="gradient" id="apcaGradient"></span>
+			<abbr title="Accessible Perceptual Contrast Algorithm">APCA</abbr>:
+			<output id="apcaOutput" for="bgInput fgInput" aria-live="polite"></output>
+		</label>
+		<label>
+			<span class="gradient" id="wcag2Gradient"></span>
+			<abbr title="Web Content Accessibility Guidelines Version 2">WCAG 2.x</abbr>:
+			<output id="wcag2Output" for="bgInput fgInput" aria-live="polite"></output>
+		</label>
+		<a href="https://github.com/xi/apca-introduction">About APCA</a>
+	</div>
+
+	<div id="display">
+		<p>This sample text attempts to visually demonstrate how readable this color combination is, for normal, <i>italic</i>, <b>bold</b>, or <small>small</small> text.</p>
+	</div>
+
+	<script src="tool.js" type="module"></script>
+</body>
+</html>
