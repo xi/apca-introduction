@@ -1,3 +1,5 @@
+import math
+
 from matplotlib import pyplot as plt
 import numpy as np
 
@@ -10,7 +12,11 @@ def wcag(x, factor, ambient):
 	y = x / 255
 	y = np.where(y < 0.04045, y / 12.92, ((y + 0.055) / 1.055) ** 2.4)
 	y *= factor
-	return (y + ambient) / (1 + ambient)
+	y += ambient
+
+	y0 = ambient
+	y1 = 1 + ambient
+	return (y / y0) ** math.log(21, y1 / y0) / 20
 
 
 def apca(x, factor, exp):
@@ -19,7 +25,11 @@ def apca(x, factor, exp):
 	y *= factor
 	y += np.where(y < 0.022, 0.022 - y, 0) ** 1.414
 	y **= exp
-	return np.exp(y) / np.exp(1)
+	y = np.exp(y)
+
+	y0 = math.exp((0.022 ** 1.414) ** 0.6)
+	y1 = math.exp(1)
+	return (y / y0) ** math.log(21, y1 / y0) / 20
 
 
 if __name__ == '__main__':

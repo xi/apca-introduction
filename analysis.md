@@ -185,7 +185,7 @@ function sRGBtoY_modified(srgb, exponent) {
   if (y < 0.022) {
     y += Math.pow(0.022 - y, 1.414);
   }
-  return Math.exp(Math.pow(y, exponent)) / Math.exp(1);
+  return Math.exp(Math.pow(y, exponent));
 }
 ```
 
@@ -205,14 +205,35 @@ To get a better feeling for how these formulas compare, I plotted the results
 of `sRGBtoY()`. In order to reduce colors to a single dimension, I used gray
 `[x, x, x]`, red `[x, 0, 0]`, green `[0, x, 0]` and blue `[0, 0, x]` values.
 
+I also normalized the values so they are in the same range as WCAG 2.x. I used
+factors (because they do not change the contrast ratio) and powers (because
+they are monotonous on the contrast ratio).
+
+```js
+var average_exponent = 0.6;
+var y0 = Math.exp(Math.pow(0.022, 1.414 * average_exponent));
+var y1 = Math.exp(1);
+
+function normalize(y) {
+  // scale the lower end to 1
+  y /= y0;
+
+  // scale the upper end to 21
+  // we use a power so the lower end stays at 1
+  y = Math.pow(y, Math.log(21) / Math.log(y1 / y0));
+
+  // scale down to the desired range
+  return y / 20;
+}
+```
+
 ![sRGBtoY comparison](plots/sRGBtoY_comparison.png)
 
 The four curves for APCA are very similar. Despite the very different formula,
-the WCAG 2.x curve also has a similar shape, although it is a lot lower. I
-added another curve that uses the WCAG 2.x formula, but with an ambient light
-value of 0.6 instead of 0.05. This one is very similar to the APCA curves. The
-second column shows the differences between the APCA curves and this modified
-WCAG 2.x.
+the WCAG 2.x curve also has a similar shape. I added a modified WCAG 2.x curve
+with an ambient light value of 0.6 instead of 0.05. This one is very similar
+to the APCA curves. The second column shows the differences between the APCA
+curves and this modified WCAG 2.x.
 
 The APCA contrast formula is certainly not as obvious a choice as the one from
 WCAG 2.x. I was not able to find much information on how it was derived. A
