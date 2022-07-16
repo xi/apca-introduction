@@ -70,6 +70,8 @@ function contrast(fg, bg) {
   combinations meet at least level A, 11% meet at least level AA, and 3% meet
   level AAA. So APCA is stricter.
 
+Also see my [detailed analysis](analysis.md).
+
 ## Examples
 
 [![Visual comparison of WCAG 2.x and APCA](examples/screenshot.png)](https://xi.github.io/apca-introduction/examples/)
