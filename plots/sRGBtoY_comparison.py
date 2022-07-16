@@ -37,7 +37,7 @@ if __name__ == '__main__':
 	fig, axes = plt.subplots(4, 2, sharex=True, sharey='col', figsize=(6.4, 8))
 
 	for i in range(4):
-		wcag6 = wcag(x, WCAG_FACTORS[i], 0.6)
+		wcag6 = wcag(x, WCAG_FACTORS[i], 0.4)
 
 		for exp in APCA_EXPONENTS:
 			y = apca(x, APCA_FACTORS[i], exp)
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 	axes[3][0].set_ylabel('blue')
 
 	axes[0][0].set_title('sRGBtoY')
-	axes[0][1].set_title('ratio APCA / WCAG 0.6')
+	axes[0][1].set_title('ratio APCA / WCAG 0.4')
 
 	fig.legend([
 		'APCA 0.56',
@@ -61,7 +61,7 @@ if __name__ == '__main__':
 		'APCA 0.62',
 		'APCA 0.65',
 		'WCAG 0.05',
-		'WCAG 0.6',
+		'WCAG 0.4',
 	], ncol=3, loc='lower center')
 
 	plt.tight_layout()
