@@ -1,4 +1,4 @@
-export const levels = [45, 60, 75];
+export const levels = [15, 30, 45, 60, 75, 90];
 
 const tests = [
   [[136, 136, 136], [255, 255, 255], 63.056469930209424],

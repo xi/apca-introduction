@@ -73,9 +73,12 @@ var score = function(range, levels) {
 var makeGradient = function(scores) {
   const colors = [
     'hsl(0, 100%, 40%)',
+    'hsl(13, 100%, 45%)',
+    'hsl(26, 100%, 45%)',
     'hsl(40, 100%, 45%)',
     'hsl(80, 60%, 45%)',
     'hsl(95, 60%, 41%)',
+    'hsl(-70, 80%, 40%)',
   ];
 
   var stops = [];
