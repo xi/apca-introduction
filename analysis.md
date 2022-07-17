@@ -238,7 +238,9 @@ curves and this modified WCAG 2.x.
 The APCA contrast formula is certainly not as obvious a choice as the one from
 WCAG 2.x. I was not able to find much information on how it was derived. A
 closer analysis reveals that it is actually not that different from WCAG 2.x,
-but assumes much more ambient light.
+but assumes much more ambient light. More research is needed to determine if
+this higher ambient light value is significant or just an artifact of the
+conversion I did.
 
 ## Spatial frequency
 
