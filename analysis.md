@@ -242,6 +242,11 @@ but assumes much more ambient light. More research is needed to determine if
 this higher ambient light value is significant or just an artifact of the
 conversion I did.
 
+As we have seen, using a polarity-aware difference instead of a ratio is not a
+significant change in terms of results. However, in terms of developer
+ergonomics, I personally feel like it is easier to work with. So I would be
+happy if this idea sticks.
+
 ## Spatial frequency
 
 Smaller text is generally harder to read than bigger text. In a more general
