@@ -42,7 +42,7 @@ if __name__ == '__main__':
 		for exp in APCA_EXPONENTS:
 			y = apca(x, APCA_FACTORS[i], exp)
 			axes[i][0].plot(x, y)
-			axes[i][1].plot(x, wcag6 - y)
+			axes[i][1].plot(x, y / wcag6)
 
 		axes[i][0].plot(x, wcag(x, WCAG_FACTORS[i], 0.05))
 		axes[i][0].plot(x, wcag6)
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 	axes[3][0].set_ylabel('blue')
 
 	axes[0][0].set_title('sRGBtoY')
-	axes[0][1].set_title('difference to WCAG 0.6')
+	axes[0][1].set_title('ratio APCA / WCAG 0.6')
 
 	fig.legend([
 		'APCA 0.56',
