@@ -235,12 +235,33 @@ with an ambient light value of 0.4 instead of 0.05. This one is very similar
 to the APCA curves. The second column shows the differences between the APCA
 curves and this modified WCAG 2.x.
 
-The APCA contrast formula is certainly not as obvious a choice as the one from
-WCAG 2.x. I was not able to find much information on how it was derived. A
-closer analysis reveals that it is actually not that different from WCAG 2.x,
-but assumes much more ambient light. More research is needed to determine if
-this higher ambient light value is significant or just an artifact of the
-conversion I did.
+I also wanted to see how the contrast results compare. I took a random sample
+of color pairs and computed the normalized APCA contrast, WCAG 2.x contrast
+(without removing the polarity) and the modified WCAG contrast with an ambient
+light value of 0.4.
+
+![contrast comparison](plots/contrast_comparison.png)
+
+In the top row we see two scatter plots that compare APCA to both WCAG
+variants. As we can see, they correlate in both cases, but the modified WCAG
+2.x contrast is much closer.
+
+In the bottom row we see two more scatter plots. This time the X axis
+corresponds to foreground luminance and the Y axis corresponds to background
+luminance. The color of the dots indicated the differences between the
+respective formulas, calculated as `log(apca / wcag)`. Note that the scaling of
+colors is different in the two plots. As we can see, the biggest differences
+between APCA and WCAG 2.x are in areas where one color is extremely light or
+extremely dark. For light colors, APCA predicts an even higher contrast
+(difference is in the same direction as contrast polarity). For dark colors,
+APCA predicts a lower contrast (difference is inverse to contrast polarity).
+
+To sum up, the APCA contrast formula is certainly not as obvious a choice as
+the one from WCAG 2.x. I was not able to find much information on how it was
+derived. A closer analysis reveals that it is actually not that different from
+WCAG 2.x, but assumes much more ambient light. More research is needed to
+determine if this higher ambient light value is significant or just an
+artifact of the conversion I did.
 
 As we have seen, using a polarity-aware difference instead of a ratio is not a
 significant change in terms of results. However, in terms of developer
