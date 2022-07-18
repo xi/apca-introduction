@@ -381,6 +381,39 @@ APCA defines 6 thresholds: 15, 30, 45, 60, 75, 90.
 The required threshold depends on the spatial frequency (see above). 45, 60,
 and 75 loosely correspond to 3, 4.5, and 7 in WCAG 2.x.
 
+Again I generated random color pairs and used them to compare APCA to WCAG 2.x:
+
+
+|        |  < 15 | 15-30 | 30-45 | 45-60 | 60-75 | 75-90 |  > 90 | total |
+| ------:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:|
+|    < 3 |  35.3 |  25.0 |  11.3 |   1.7 |   0.0 |   0.0 |   0.0 |  73.3 |
+|  3-4.5 |   0.0 |   0.8 |   6.2 |   6.5 |   0.8 |   0.0 |   0.0 |  14.3 |
+|  4.5-7 |   0.0 |   0.0 |   0.8 |   3.8 |   3.7 |   0.2 |   0.0 |   8.6 |
+|    > 7 |   0.0 |   0.0 |   0.0 |   0.2 |   1.8 |   1.6 |   0.1 |   3.8 |
+|  total |  35.3 |  25.8 |  18.3 |  12.3 |   6.4 |   1.8 |   0.1 |       |
+
+The columns correspond to APCA thresholds, the rows correspond to WCAG 2.x
+thresholds. For example, 6.2 % of the generated color pairs pass WCAG 2.x with
+a contrast above 3, but fail APCA with a contrast below 45 (assuming a
+conventional spatial frequency).
+
+|          |  < 15 | 15-30 | 30-45 | 45-60 | 60-75 | 75-90 |  > 90 | total |
+| --------:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:|
+|    < 1.6 |  33.7 |   0.7 |   0.0 |   0.0 |   0.0 |   0.0 |   0.0 |  34.5 |
+|  1.6-2.5 |   1.5 |  23.5 |   0.8 |   0.0 |   0.0 |   0.0 |   0.0 |  25.9 |
+|  2.5-3.8 |   0.0 |   1.5 |  15.8 |   0.2 |   0.0 |   0.0 |   0.0 |  17.5 |
+|  3.8-5.7 |   0.0 |   0.0 |   1.7 |  10.4 |   0.0 |   0.0 |   0.0 |  12.2 |
+|  5.7-8.7 |   0.0 |   0.0 |   0.0 |   1.7 |   5.7 |   0.0 |   0.0 |   7.4 |
+| 8.7-13.2 |   0.0 |   0.0 |   0.0 |   0.0 |   0.6 |   1.8 |   0.0 |   2.4 |
+|   > 13.2 |   0.0 |   0.0 |   0.0 |   0.0 |   0.0 |   0.0 |   0.1 |   0.2 |
+|    total |  35.3 |  25.8 |  18.3 |  12.3 |   6.4 |   1.8 |   0.1 |       |
+
+The second table compares APCA to the modified WCAG 2.x contrast. The
+thresholds were derived by applying the normalization steps described above to
+the APCA thresholds. As expected, most color pairs fall into the same category
+with both formulas. For example, only 1.7 % pass the modified WCAG 2.x with a
+contrast above 3.8, but fail APCA with a contrast below 45.
+
 ## Conclusion
 
 In this analysis I took a deeper look at the Accessible Perceptual Contrast
