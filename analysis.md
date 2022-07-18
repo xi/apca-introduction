@@ -39,8 +39,8 @@ answer each of these questions.
 ## The contrast formula
 
 There is no *true* contrast formula. Instead, these formulas are supposed to
-predict how most humans will a color combination, even if they cannot be
-correct 100% of the time..
+predict how most humans perceive a color combination, even if they cannot be
+correct 100% of the time.
 
 ### A naive approach
 
@@ -70,7 +70,7 @@ function gamma(x) {
   if (x < 0.04045) {
     return x / 12.92;
   } else {
-    return Math.pow((c + 0.055) / 1.055, 2.4);
+    return Math.pow((x + 0.055) / 1.055, 2.4);
   }
 }
 
@@ -379,7 +379,7 @@ How these values were derived is not completely clear:
 APCA defines 6 thresholds: 15, 30, 45, 60, 75, 90.
 
 The required threshold depends on the spatial frequency (see above). 45, 60,
-and 70 loosely correspond to 3, 4.5, and 7 in WCAG 2.x.
+and 75 loosely correspond to 3, 4.5, and 7 in WCAG 2.x.
 
 ## Conclusion
 

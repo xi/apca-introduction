@@ -48,7 +48,7 @@ function contrast(fg, bg) {
   }
 
   return c * 100;
-};
+}
 ```
 
 ([Source](https://github.com/Myndex/SAPC-APCA/blob/master/documentation/APCA-W3-LaTeX.md))
