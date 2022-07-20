@@ -76,13 +76,18 @@ if __name__ == '__main__':
 	apca_yfg = apca_y(fg)
 	apca_ybg = apca_y(bg)
 	apca = apca_contrast(apca_yfg, apca_ybg)
+	apcai = apca_contrast(apca_ybg, apca_yfg)
 
 	wcag_yfg = wcag_y(fg)
 	wcag_ybg = wcag_y(bg)
 	wcag = wcag_contrast(wcag_yfg, wcag_ybg)
 	wcag4 = wcag_contrast(wcag_yfg, wcag_ybg, 0.4)
 
-	for _wcag, wcag_levels in [(wcag, WCAG_LEVELS), (wcag4, WCAG4_LEVELS)]:
+	for _wcag, wcag_levels in [
+		(wcag, WCAG_LEVELS),
+		(wcag4, WCAG4_LEVELS),
+		(apcai, APCA_LEVELS),
+	]:
 		rows = []
 		for wcag_lower, wcag_upper in iter_levels(wcag_levels):
 			rows.append([])

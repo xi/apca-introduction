@@ -419,6 +419,23 @@ the APCA thresholds. As expected, most color pairs fall into the same category
 with both formulas. For example, only 1.7 % pass the modified WCAG 2.x with a
 contrast above 3.8, but fail APCA with a contrast below 45.
 
+|        |  < 15 | 15-30 | 30-45 | 45-60 | 60-75 | 75-90 |  > 90 | total |
+| ------:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:|
+|   < 15 |  33.6 |   1.3 |   0.0 |   0.0 |   0.0 |   0.0 |   0.0 |  34.9 |
+|  15-30 |   1.3 |  23.1 |   1.3 |   0.0 |   0.0 |   0.0 |   0.0 |  25.7 |
+|  30-45 |   0.0 |   1.4 |  16.5 |   1.1 |   0.0 |   0.0 |   0.0 |  18.9 |
+|  45-60 |   0.0 |   0.0 |   1.2 |  10.4 |   0.7 |   0.0 |   0.0 |  12.3 |
+|  60-75 |   0.0 |   0.0 |   0.0 |   0.8 |   5.2 |   0.3 |   0.0 |   6.2 |
+|  75-90 |   0.0 |   0.0 |   0.0 |   0.0 |   0.3 |   1.5 |   0.0 |   1.8 |
+|   > 90 |   0.0 |   0.0 |   0.0 |   0.0 |   0.0 |   0.0 |   0.1 |   0.1 |
+|  total |  34.9 |  25.8 |  18.9 |  12.3 |   6.2 |   1.8 |   0.1 |       |
+
+The third table compares APCA to itself, but with foreground and background
+switched. WCAG 2.x does not make a difference between foreground and
+background, so this comparison would be pointless there. APCA on the other hand
+uses different exponents for foreground and background. This table shows that
+this does have a small but still significant impact on the results.
+
 ## Conclusion
 
 In this analysis I took a deeper look at the Accessible Perceptual Contrast
