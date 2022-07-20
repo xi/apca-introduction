@@ -16,10 +16,10 @@ WCAG faces a difficult challenge though: There is no one-size-fits-all solution
 for accessibility. Different humans have different needs, and different
 situations require different kinds of support.
 
-In the context of color contrast, vision impairments, ambient light, and screen
-settings can all have a pronounced impact on legibility. None of these are
-known beforehand by website authors, so the rules provided by WCAG need to work
-regardless of these factors.
+This is also the case in the context of color contrast: vision impairments,
+ambient light, and screen settings can all have a pronounced impact on
+legibility. None of these are known beforehand by website authors, so the rules
+provided by WCAG need to work regardless of these factors.
 
 Faced with the question whether it wanted to give precise instructions (that
 might not be ideal in every situation) or give nuanced but ultimately vague
