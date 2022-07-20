@@ -1,5 +1,10 @@
 # Detailed analysis of APCA (2022-07-16)
 
+I am a regular web developer with a bachelor's degree in math, but without any
+training in the science around visual perception. That's why I cannot evaluate
+whether APCA is *better* than WCAG 2.x. Instead this is a systematic
+comparison of their mathemetical properties.
+
 ## Context: The Web Content Accessibility Guidelines (WCAG)
 
 APCA was developed to address some issues related to contrast in the [Web
