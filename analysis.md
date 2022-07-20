@@ -282,7 +282,7 @@ angle.
 
 If content is easy to read because of its spacial frequency, I do not need as
 much color contrast. On the other hand, if the spatial frequency is bad, more
-color contrast is needed. So we can defined a minimum required color contrast
+color contrast is needed. So we can define a minimum required color contrast
 based on spatial frequency.
 
 Interestingly, a lower spatial frequency is not always easier to read though.
