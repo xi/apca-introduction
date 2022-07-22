@@ -238,7 +238,8 @@ The four curves for APCA are very similar. Despite the very different formula,
 the WCAG 2.x curve also has a similar shape. I added a modified WCAG 2.x curve
 with an ambient light value of 0.4 instead of 0.05. This one is very similar
 to the APCA curves. The second column shows the differences between the APCA
-curves and this modified WCAG 2.x.
+curves and this modified WCAG 2.x. 0.4 was just a guess, there might be even
+better values.
 
 I also wanted to see how the contrast results compare. I took a random sample
 of color pairs and computed the normalized APCA contrast, WCAG 2.x contrast
