@@ -38,7 +38,7 @@ def apca_contrast(yfg, ybg):
 
 
 if __name__ == '__main__':
-	fig, axes = plt.subplots(2, 2, sharex='row', sharey='row', figsize=(6, 6))
+	fig, axes = plt.subplots(2, 2, sharex='row', sharey='row', figsize=(7, 6))
 
 	options = {
 		'marker': '.',
@@ -64,9 +64,10 @@ if __name__ == '__main__':
 	axes[0][0].set_xlabel('WCAG 2.x')
 	axes[0][0].set_ylabel('APCA')
 
-	axes[1][0].scatter(wcag_yfg, wcag_ybg, c=np.log(apca / wcag), **options)
+	p2 = axes[1][0].scatter(wcag_yfg, wcag_ybg, c=np.log(apca / wcag), **options)
 	axes[1][0].set_xlabel('Yfg')
 	axes[1][0].set_ylabel('Ybg')
+	plt.colorbar(p2, ax=axes[1][0])
 
 	axes[0][1].set_title('APCA vs WCAG 2.x (0.4)')
 
@@ -74,9 +75,10 @@ if __name__ == '__main__':
 	axes[0][1].set_xlabel('WCAG 2.x (0.4)')
 	axes[0][1].set_ylabel('APCA')
 
-	axes[1][1].scatter(wcag_yfg, wcag_ybg, c=np.log(apca / wcag4), **options)
+	p4 = axes[1][1].scatter(wcag_yfg, wcag_ybg, c=np.log(apca / wcag4), **options)
 	axes[1][1].set_xlabel('Yfg')
 	axes[1][1].set_ylabel('Ybg')
+	plt.colorbar(p4, ax=axes[1][1])
 
 	plt.tight_layout()
 	plt.savefig('contrast_comparison.png')
