@@ -255,12 +255,12 @@ variants. As we can see, they correlate in both cases, but the modified WCAG
 In the bottom row we see two more scatter plots. This time the X axis
 corresponds to foreground luminance and the Y axis corresponds to background
 luminance. The color of the dots indicated the differences between the
-respective formulas, calculated as `log(apca / wcag)`. Note that the scaling of
-colors is different in the two plots. As we can see, the biggest differences
-between APCA and WCAG 2.x are in areas where one color is extremely light or
-extremely dark. For light colors, APCA predicts an even higher contrast
-(difference is in the same direction as contrast polarity). For dark colors,
-APCA predicts a lower contrast (difference is inverse to contrast polarity).
+respective formulas, calculated as `log(apca / wcag)`. As we can see, the
+biggest differences between APCA and WCAG 2.x are in areas where one color is
+extremely light or extremely dark. For light colors, APCA predicts an even
+higher contrast (difference is in the same direction as contrast polarity). For
+dark colors, APCA predicts a lower contrast (difference is inverse to contrast
+polarity).
 
 To sum up, the APCA contrast formula is certainly not as obvious a choice as
 the one from WCAG 2.x. I was not able to find much information on how it was
