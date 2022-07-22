@@ -20,12 +20,12 @@ var parseColor = function(c) {
 
 var getLevel = function(c, module) {
 	var a = module.abs(c);
-	for (let i = 0; i < module.levels.length; i++) {
-		if (a < module.levels[i]) {
+	for (let i = 0; i < 3; i++) {
+		if (a < module.levels[i + 2]) {
 			return i;
 		}
 	}
-	return module.levels.length;
+	return 3;
 };
 
 var template = document.querySelector('template');
