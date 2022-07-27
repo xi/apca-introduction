@@ -63,6 +63,8 @@ if __name__ == '__main__':
 	axes[0][0].scatter(wcag, apca, **options)
 	axes[0][0].set_xlabel('WCAG 2.x')
 	axes[0][0].set_ylabel('APCA')
+	axes[0][0].set_xscale('log')
+	axes[0][0].set_yscale('log')
 
 	p2 = axes[1][0].scatter(wcag_yfg, wcag_ybg, c=np.log(apca / wcag), **options)
 	axes[1][0].set_xlabel('Yfg')
@@ -74,6 +76,8 @@ if __name__ == '__main__':
 	axes[0][1].scatter(wcag4, apca, **options)
 	axes[0][1].set_xlabel('WCAG 2.x (0.4)')
 	axes[0][1].set_ylabel('APCA')
+	axes[0][1].set_xscale('log')
+	axes[0][1].set_yscale('log')
 
 	p4 = axes[1][1].scatter(wcag_yfg, wcag_ybg, c=np.log(apca / wcag4), **options)
 	axes[1][1].set_xlabel('Yfg')
