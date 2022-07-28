@@ -111,9 +111,9 @@ a much bigger response than the same amount of blue light.
 Next the [Weber contrast] of those two luminances is calculated. Weber contrast
 has been called the ["gold standard" for text contrast]. It is usually defined
 as `(yfg - ybg) / ybg` which is the same as `yfg / ybg - 1`. In this case, 0.05
-is added to both values to account for ambient light. The shift by 1 is removed
-because it has no impact on the results (as long as the thresholds are adapted
-accordingly).
+is added to both values to account for screen flare (reflected ambient light).
+The shift by 1 is removed because it has no impact on the results (as long as
+the thresholds are adapted accordingly).
 
 Finally, the polarity is removed so that the formula has the same results when
 the two colors are switched.
@@ -236,15 +236,15 @@ function normalize(y) {
 
 The four curves for APCA are very similar. Despite the very different formula,
 the WCAG 2.x curve also has a similar shape. I added a modified WCAG 2.x curve
-with an ambient light value of 0.4 instead of 0.05. This one is very similar
+with a flare correction of 0.4 instead of 0.05. This one is very similar
 to the APCA curves. The second column shows the differences between the APCA
 curves and this modified WCAG 2.x. 0.4 was just a guess, there might be even
 better values.
 
 I also wanted to see how the contrast results compare. I took a random sample
 of color pairs and computed the normalized APCA contrast, WCAG 2.x contrast
-(without removing the polarity) and the modified WCAG contrast with an ambient
-light value of 0.4.
+(without removing the polarity) and the modified WCAG contrast with a flare
+correction of 0.4.
 
 ![contrast comparison](plots/contrast_comparison.png)
 
@@ -265,9 +265,9 @@ polarity).
 To sum up, the APCA contrast formula is certainly not as obvious a choice as
 the one from WCAG 2.x. I was not able to find much information on how it was
 derived. A closer analysis reveals that it is actually not that different from
-WCAG 2.x, but assumes much more ambient light. More research is needed to
-determine if this higher ambient light value is significant or just an
-artifact of the conversion I did.
+WCAG 2.x, but assumes much more flare. More research is needed to determine if
+this higher flare correction is significant or just an artifact of the
+conversion I did.
 
 As we have seen, using a polarity-aware difference instead of a ratio is not a
 significant change in terms of results. However, in terms of developer
@@ -446,7 +446,7 @@ accessibility testing for the web.
 
 Though still in early development, APCA already makes two major contributions:
 
--   a different color contrast formula that assume much more ambient light
+-   a different color contrast formula that assumes much more screen flare
 -   a more sophisticated link between spatial frequency and minimum color
     contrast that allows for more nuanced thresholds
 
