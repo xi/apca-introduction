@@ -89,9 +89,9 @@ if __name__ == '__main__':
 		rows = []
 		for wcag_lower, wcag_upper in iter_levels(wcag_levels):
 			rows.append([])
-			a = (wcag_lower <= _wcag) * (_wcag < wcag_upper)
+			a = (wcag_lower <= _wcag) & (_wcag < wcag_upper)
 			for apca_lower, apca_upper in iter_levels(APCA_LEVELS):
-				b = (apca_lower <= apca) * (apca < apca_upper)
-				v = sum(a * b) / size * 100
+				b = (apca_lower <= apca) & (apca < apca_upper)
+				v = sum(a & b) / size * 100
 				rows[-1].append(v)
 		print_table(rows)
