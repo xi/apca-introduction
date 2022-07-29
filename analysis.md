@@ -177,7 +177,7 @@ APCA to WCAG 2.x, I will make some modifications:
     will look at the `exp()` of that difference. Since
     `exp(a - b) == exp(a) / exp(b)`, this allows us to convert the APCA formula
     from a difference to a ratio. Again I user the same trick: Since `exp()` is
-    monotonous, it does not change the results other than moving the
+    monotonic, it does not change the results other than moving the
     thresholds.
 
 With those changes. All other differences between APCA and WCAG 2.x can be
@@ -215,7 +215,7 @@ of `sRGBtoY()`. In order to reduce colors to a single dimension, I used gray
 
 I also normalized the values so they are in the same range as WCAG 2.x. I used
 factors (because they do not change the contrast ratio) and powers (because
-they are monotonous on the contrast ratio).
+they are monotonic on the contrast ratio).
 
 ```js
 var average_exponent = 0.6;
