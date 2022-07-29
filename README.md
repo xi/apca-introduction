@@ -1,7 +1,9 @@
 # The misleading introduction to APCA
 
-User xi created this repo, with some unfortunate misconceptions and spurious assertions regarding APCA. As of right now, I have not corrected them, but I do intend to shortly. For now, many things written below are in error or misleading. And the analysis page is an obfuscation of the math in a very beligerant attempt to crudely and incompletely reverse engineer APCA. It's pretty gross, actually.
+User xi created this repo, with some unfortunate misconceptions and spurious assertions regarding APCA. As of right now, I have not corrected them, but I do intend to shortly. For now, many things written below are in error or misleading. And the analysis page is an obfuscation of the math in a very beligerant attempt to crudely and incompletely reverse engineer APCA. It's pretty gross, actually. Below is the "introduction" he created:
 
+
+-----
 ## What is APCA?
 
 The [Accessible Perceptual Contrast Algorithm (APCA)](https://git.apcacontrast.com/)
