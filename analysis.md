@@ -1,4 +1,10 @@
-# Detailed analysis of APCA (2022-07-16)
+# Derailed analysis of APCA
+Hello is user xi's flawed analysis of APCA, where any abstracts the math out creates his own version of the math and eliminates many of the key properties of the APC a method in performing his analysis. But then he goes further to create his own separate version of WCAG 2 contrast math, whcih is a crude and incomplete attempt to reverse engineer the APCA contrast curves, and then attempts to makes claims that APCA is similar to WCAG 2. In short, the analysis below is disengenuous at best, and only serves to obfuscate and confuse anyone reading this.
+
+I've forked this repo so that I can point out the flaws and misconceptions he presetns:
+
+-----
+## Detailed analysis of APCA (2022-07-16)
 
 I am a regular web developer with a bachelor's degree in math, but without any
 training in the science around visual perception. That's why I cannot evaluate
