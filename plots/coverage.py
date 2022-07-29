@@ -52,8 +52,8 @@ def iter_levels(levels):
 			yield levels[i - 1], levels[i]
 
 
-def print_row(row, sep=' | ', end=['']):
-	_row = [''] + [f'{x:.1f}' for x in row] + end
+def print_row(row, sep=' | '):
+	_row = [''] + [f'{x:.1f}' for x in row] + ['']
 	_row = [f'{s: >5}' for s in _row]
 	print(sep.join(_row).strip())
 
@@ -64,7 +64,9 @@ def print_table(rows):
 
 	r = np.array(rows)
 	totals = [sum(r[:, i]) for i in range(r.shape[1])]
-	print_row(totals, end=['', ''])
+	if len(rows) == len(rows[0]):
+		totals.append(sum(rows[i][i] for i in range(len(rows))))
+	print_row(totals)
 	print()
 
 
