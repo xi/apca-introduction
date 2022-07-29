@@ -43,6 +43,9 @@ answer each of these questions.
 
 ## The contrast formula
 
+> all models are wrong, but some are useful\
+> -- George Box
+
 There is no *true* contrast formula. Instead, these formulas are supposed to
 predict how most humans perceive a color combination, even if they cannot be
 correct 100% of the time.
