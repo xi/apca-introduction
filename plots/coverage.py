@@ -81,17 +81,17 @@ if __name__ == '__main__':
 	wcag = wcag_contrast(wcag_yfg, wcag_ybg)
 	wcag4 = wcag_contrast(wcag_yfg, wcag_ybg, 0.4)
 
-	for _wcag, wcag_levels in [
-		(wcag, WCAG_LEVELS),
-		(wcag4, WCAG4_LEVELS),
-		(apcai, APCA_LEVELS),
+	for values1, levels1, values2, levels2 in [
+		(wcag, WCAG_LEVELS, apca, APCA_LEVELS),
+		(wcag4, WCAG4_LEVELS, apca, APCA_LEVELS),
+		(apcai, APCA_LEVELS, apca, APCA_LEVELS),
 	]:
 		rows = []
-		for wcag_lower, wcag_upper in iter_levels(wcag_levels):
+		for lower1, upper1 in iter_levels(levels1):
 			rows.append([])
-			a = (wcag_lower <= _wcag) & (_wcag < wcag_upper)
-			for apca_lower, apca_upper in iter_levels(APCA_LEVELS):
-				b = (apca_lower <= apca) & (apca < apca_upper)
+			a = (lower1 <= values1) & (values1 < upper1)
+			for lower2, upper2 in iter_levels(levels2):
+				b = (lower2 <= values2) & (values2 < upper2)
 				v = sum(a & b) / size * 100
 				rows[-1].append(v)
 		print_table(rows)
