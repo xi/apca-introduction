@@ -38,10 +38,6 @@ def apca_contrast(yfg, ybg):
 	return np.abs(c) * 100
 
 
-def count(a, b):
-	return sum(a * b)
-
-
 def iter_levels(levels):
 	for i in range(len(levels) + 1):
 		if i == 0:
