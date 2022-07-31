@@ -68,7 +68,7 @@ function contrast(fg, bg) {
 - With WCAG 2.x, 27% of all color combinations have a contrast of at least 3,
   12% have at least 4.5, and 4% have at least 7. With APCA, only 21% of all
   color combinations have a contrast of at least 45, 8% have at least 60, and
-  2% have at least 75. So APCA is stricter.
+  2% have at least 75.
 
 Also see my [detailed analysis](analysis.md).
 
