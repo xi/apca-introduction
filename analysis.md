@@ -294,7 +294,13 @@ Interestingly, a lower spatial frequency is not always easier to read though.
 per degree. Below that, features get slightly harder to detect. (Perhaps that
 is the reasons for the "you don't see the forest among the trees" phenomenon.)
 
-It is not obvious how to define spatial frequency in the context of the web.
+There is one caveat though: The spatial frequency only defines the contrast
+threshold under which a pattern is not perceivable at all. Above that it has
+barely any effect. In the context of accessibility we should usually stay well
+above that threshold. So it is not clear whether spatial frequency is a useful
+concept in this context.
+
+On top of that, it is not obvious how to define spatial frequency for the web.
 For text, font size and weight certainly play a role. But different fonts have
 wildly different interpretations of these values. Since fonts depend on user
 preference, we cannot know beforehand which fonts will be used. We also don't
