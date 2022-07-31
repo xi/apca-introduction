@@ -456,15 +456,27 @@ Algorithm (APCA), a new algorithm to predict visual contrast. I compared it to
 an existing algorithm that has been part of WCAG 2.x, the current standard for
 accessibility testing for the web.
 
-Though still in early development, APCA already makes two major contributions:
+Though still in early development, APCA is very different from the older
+algorithm in many key aspects:
 
--   a different color contrast formula that assume much more ambient light
--   a more sophisticated link between spatial frequency and minimum color
-    contrast that allows for more nuanced thresholds
+-   It uses a different luminance calculation that deviates from the standards
+    but is supposed to be closer to real world usage.
+-   It uses a different way of calculating a contrast from luminances.
+-   It uses different scaling. Crucially, this scaling is based on a difference
+    rather than a ratio.
+-   It uses a more sophisticated link between spatial frequency and minimum
+    color contrast that might allow for more nuanced thresholds.
 
-It is hard to evaluate APCA from a purely theoretical standpoint. Instead,
-thorough empirical validation is required. This has not yet started and will be
-a considerable effort. See <https://github.com/w3c/silver/issues/574>.
+The new contrast formula agrees with WCAG 2.x for 83.5% of color pairs. That
+number rises to 91% for a modified WCAG 2.x formula with an ambient light value
+of 0.4. This could indicate that APCA assumes more ambient light. It would also
+explain why APCA reports lower contrast for darker colors.
+
+I like many of the ideas. However, I am concerned by the lack of publicly
+available evidence. It is hard to evaluate APCA from a purely theoretical
+standpoint. Thorough empirical validation is required. This has not yet started
+and will be a considerable effort. See
+<https://github.com/w3c/silver/issues/574>.
 
 [Web Content Accessibility Guidelines]: https://www.w3.org/TR/WCAG21/
 [sRGB color space]: https://en.wikipedia.org/wiki/SRGB
