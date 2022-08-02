@@ -27,9 +27,9 @@ def apca_y(color):
 
 
 def apca_contrast(yfg, ybg):
-	_yfg = yfg ** np.where(ybg > yfg, 0.57, 0.62)
-	_ybg = ybg ** np.where(ybg > yfg, 0.56, 0.65)
-	c = _ybg - _yfg
+	lfg = yfg ** np.where(ybg > yfg, 0.57, 0.62)
+	lbg = ybg ** np.where(ybg > yfg, 0.56, 0.65)
+	c = lbg - lfg
 	c = np.exp(c)
 
 	y0 = math.exp((0.022 ** 1.414) ** 0.6)
