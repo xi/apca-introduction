@@ -470,11 +470,11 @@ number rises to 91% for a modified WCAG 2.x formula with an ambient light value
 of 0.4. This could indicate that APCA assumes more ambient light. It would also
 explain why APCA reports lower contrast for darker colors.
 
-I like many of the ideas. However, I am concerned by the lack of publicly
-available evidence. It is hard to evaluate APCA from a purely theoretical
-standpoint. Thorough empirical validation is required. This has not yet started
-and will be a considerable effort. See
-<https://github.com/w3c/silver/issues/574>.
+So far I like many of the ideas of APCA, but I am concerned by the [lack of
+publicly available evidence]. Then again, the new algorithm cannot really be
+evaluated without first making some policy decisions, e.g. which viewing
+conditions we are aiming for. I hope this analysis can support the community in
+figuring out what questions need to be answered.
 
 [Web Content Accessibility Guidelines]: https://www.w3.org/TR/WCAG21/
 [sRGB color space]: https://en.wikipedia.org/wiki/SRGB
@@ -488,3 +488,4 @@ and will be a considerable effort. See
 [1.4.12]: https://www.w3.org/TR/WCAG21/#text-spacing
 [does attempt to model spatial frequency]: https://git.apcacontrast.com/WEBTOOLS/APCA/
 [1.4.11]: https://www.w3.org/TR/WCAG21/#non-text-contrast
+[lack of publicly available evidence]: https://github.com/w3c/silver/issues/574
