@@ -5,19 +5,25 @@ body {
 }
 .example {
 	width: 16rem;
-	background: #eee;
+	background: #e6e0dd;
+	font-family: helvetica, arial, sans-serif;
+	font-size: 19px;
 	font-weight: bold;
-	line-height: 1.4;
+	line-height: 1.33;
+	border-radius: 16px;
 }
 
 .display {
-	padding: 2rem;
-	font-size: 120%;
+	padding: 0.75em;
+	font-size: 14px;
+	font-weight: 400;
 	text-align: center;
+	border: 1px solid #a0a0a0;
+	border-radius: 16px;
 }
 
 .output {
-	padding: 1.5rem 2rem 2rem;
+	padding: 0.75em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -45,18 +51,32 @@ output {
 	padding: 0 0.6em;
 }
 .badge-0 {
-	background-color: hsl(0, 100%, 40%);
-	color: #fff;
+	background-color: #c00;
+	color: #ffa;
+}
+.badge-1b {
+	background-color: hsl(40, 100%, 25%);
+	color: #ff0;
 }
 .badge-1 {
-	background-color: hsl(40, 100%, 45%);
-	color: #000;
+	background-color: hsl(60, 100%, 45%);
+	color: #900;
 }
 .badge-2 {
-	background-color: hsl(80, 60%, 45%);
-	color: #000;
+	background-color: #070;
+	color: #ffc;
 }
 .badge-3 {
-	background-color: hsl(95, 60%, 41%);
+	background-color: #0a0;
 	color: #fff;
 }
+.badge-4 {
+	background-color: #0a0;
+	color: #fff;
+}
+
+
+
+
+
+

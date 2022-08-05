@@ -1,4 +1,4 @@
-export const levels = [3, 3, 3, 4.5, 7, 100];
+export const levels = [3, 3, 4.5, 7, 100];
 
 var sRGBtoY = function(srgb) {
   var pre = c => c < 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
