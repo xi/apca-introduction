@@ -282,9 +282,9 @@ function contrast(fg, bg) {
   var lbg = YtoL(ybg);
 
   if (ybg > yfg) {
-    return Math.pow(lbg, 0.56 / 0.6) - Math.pow(yfg, 0.57 / 0.6);
+    return Math.pow(lbg, 0.56 / 0.6) - Math.pow(lfg, 0.57 / 0.6);
   } else {
-    return Math.pow(ybg, 0.65 / 0.6) - Math.pow(yfg, 0.62 / 0.6);
+    return Math.pow(ybg, 0.65 / 0.6) - Math.pow(lfg, 0.62 / 0.6);
   }
 };
 
