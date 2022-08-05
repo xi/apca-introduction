@@ -1,12 +1,19 @@
 import * as wcag from '../wcag2.js';
 import * as apca from '../apca.js';
 
-const LEVEL_LABELS = ['×', 'A', 'AA', 'AAA'];
+const LEVEL_LABELS = ['XX', 'A', 'AA', 'AAA'];
+const APCA_LABELS = ['NOTXT', 'SPOT', 'SUBFL', 'FLUENT', 'BODYTX'];
 
 const COLORS = [
-	['#44bb44', '#000000', '#ffffff'],
-	['#dd44ee', '#000000', '#ffffff'],
-	['#ff4422', '#000000', '#ffffff'],
+	['#9999ff', '#000000', '#ffffff'],
+	['#00bb00', '#000000', '#ffffff'],
+	['#ff7373', '#000000', '#ffffff'],
+	['#3333FF', '#000000', '#ffffff'],
+	['#40631F', '#000000', '#ffffff'],
+	['#B80000', '#000000', '#ffffff'],
+	['#0F6BFF', '#000000', '#ffffff'],
+	['#008A00', '#000000', '#ffffff'],
+	['#E62200', '#000000', '#ffffff'],
 	['#11bbff', '#220044', '#440022'],
 ];
 
@@ -20,8 +27,8 @@ var parseColor = function(c) {
 
 var getLevel = function(c, module) {
 	var a = module.abs(c);
-	for (let i = 0; i < 3; i++) {
-		if (a < module.levels[i + 2]) {
+	for (let i = 0; i < 5; i++) {
+		if (a < module.levels[i + 1]) {
 			return i;
 		}
 	}
@@ -37,7 +44,7 @@ var addExample = function(fg, bg) {
 	var clone = template.content.cloneNode(true);
 
 	var display = clone.querySelector('.display');
-	display.textContent = `${fg} on ${bg}`;
+	display.textContent = `text ${fg} on ${bg} BG`;
 	display.style.color = fg;
 	display.style.backgroundColor = bg;
 
@@ -50,7 +57,7 @@ var addExample = function(fg, bg) {
 	var apca_contrast = apca.contrast(cfg, cbg);
 	var apca_level = getLevel(apca_contrast, apca);
 	clone.querySelector('.apca output').textContent = apca_contrast.toFixed(0);
-	clone.querySelector('.apca .badge').textContent = LEVEL_LABELS[apca_level];
+	clone.querySelector('.apca .badge').textContent = APCA_LABELS[apca_level];
 	clone.querySelector('.apca .badge').classList.add(`badge-${apca_level}`);
 
 	document.body.append(clone);
