@@ -325,11 +325,9 @@ I plotted curves for both the Weber-Fechner model (log) and the Stevens model
 (pow) with different parameters.
 
 -   The log curve with a flare of 0.05 (WCAG 2) is closer to the pow curve with
-    an exponent of 1/3
+    an exponent of 1/3 and a flare of 0.0025
 -   The log curve with a flare of 0.4 is closer to the pow curves with
     exponents 0.56 and 0.68 (similar to APCA)
--   The pow curve with an exponent of 1/3 **and** a flare of 0.025 is somewhere
-    in the middle.
 
 This shows that a big part of the different results between WCAG 2.x and APCA
 are caused by a different choice in parameters. If we were to change the flare

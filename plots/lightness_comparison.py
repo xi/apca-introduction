@@ -23,8 +23,7 @@ if __name__ == '__main__':
 
 	weber(0.05)
 	weber(0.4)
-	stevens(0, 0.333)
-	stevens(0.025, 0.333)
+	stevens(0.0025, 0.333)
 	stevens(0, 0.56)
 	stevens(0, 0.68)
 
