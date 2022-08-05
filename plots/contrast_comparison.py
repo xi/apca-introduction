@@ -1,5 +1,3 @@
-import math
-
 from matplotlib import pyplot as plt
 import numpy as np
 
@@ -10,12 +8,12 @@ def wcag_y(color):
 	return 0.2126 * c[:, 0] + 0.7152 * c[:, 1] + 0.0722 * c[:, 2]
 
 
-def wcag_contrast(yfg, ybg, ambient=0.05):
-	c = (ybg + ambient) / (yfg + ambient)
+def wcag_l(y, flare=0.05):
+	return np.log(y / flare + 1) / np.log(1 / flare + 1)
 
-	y0 = ambient
-	y1 = 1 + ambient
-	return c ** math.log(21, y1 / y0)
+
+def wcag_contrast(lfg, lbg):
+	return lbg - lfg
 
 
 def apca_y(color):
@@ -26,15 +24,14 @@ def apca_y(color):
 	return y
 
 
-def apca_contrast(yfg, ybg):
-	lfg = yfg ** np.where(ybg > yfg, 0.57, 0.62)
-	lbg = ybg ** np.where(ybg > yfg, 0.56, 0.65)
-	c = lbg - lfg
-	c = np.exp(c)
+def apca_l(y):
+	return y ** 0.6
 
-	y0 = math.exp((0.022 ** 1.414) ** 0.6)
-	y1 = math.exp(1)
-	return c ** math.log(21, y1 / y0)
+
+def apca_contrast(lfg, lbg):
+	_lfg = lfg ** (np.where(lbg > lfg, 0.57, 0.62) / 0.6)
+	_lbg = lbg ** (np.where(lbg > lfg, 0.56, 0.65) / 0.6)
+	return _lbg - _lfg
 
 
 if __name__ == '__main__':
@@ -51,38 +48,23 @@ if __name__ == '__main__':
 
 	apca_yfg = apca_y(fg)
 	apca_ybg = apca_y(bg)
-	apca = apca_contrast(apca_yfg, apca_ybg)
+	apca_lfg = apca_l(apca_yfg)
+	apca_lbg = apca_l(apca_ybg)
+	apca = apca_contrast(apca_lfg, apca_lbg)
 
-	wcag_yfg = wcag_y(fg)
-	wcag_ybg = wcag_y(bg)
-	wcag = wcag_contrast(wcag_yfg, wcag_ybg)
-	wcag4 = wcag_contrast(wcag_yfg, wcag_ybg, 0.4)
-
-	axes[0][0].set_title('APCA vs WCAG 2.x')
-
-	axes[0][0].scatter(wcag, apca, **options)
-	axes[0][0].set_xlabel('WCAG 2.x')
-	axes[0][0].set_ylabel('APCA')
-	axes[0][0].set_xscale('log')
-	axes[0][0].set_yscale('log')
-
-	p2 = axes[1][0].scatter(wcag_yfg, wcag_ybg, c=np.log(apca / wcag), **options)
-	axes[1][0].set_xlabel('Yfg')
-	axes[1][0].set_ylabel('Ybg')
-	plt.colorbar(p2, ax=axes[1][0])
-
-	axes[0][1].set_title('APCA vs WCAG 2.x (0.4)')
-
-	axes[0][1].scatter(wcag4, apca, **options)
-	axes[0][1].set_xlabel('WCAG 2.x (0.4)')
-	axes[0][1].set_ylabel('APCA')
-	axes[0][1].set_xscale('log')
-	axes[0][1].set_yscale('log')
-
-	p4 = axes[1][1].scatter(wcag_yfg, wcag_ybg, c=np.log(apca / wcag4), **options)
-	axes[1][1].set_xlabel('Yfg')
-	axes[1][1].set_ylabel('Ybg')
-	plt.colorbar(p4, ax=axes[1][1])
+	for a, b, y, l, contrast, title in [
+		(0, 0, wcag_y, apca_l, apca_contrast, 'sRGBtoY'),
+		(0, 1, apca_y, wcag_l, apca_contrast, 'YtoL'),
+		(1, 0, apca_y, apca_l, wcag_contrast, 'contrast'),
+		(1, 1, wcag_y, wcag_l, wcag_contrast, 'all'),
+	]:
+		values = apca - contrast(l(y(fg)), l(y(bg)))
+		vmax = np.max(np.abs(values))
+		p = axes[a][b].scatter(
+			apca_ybg, apca_yfg, c=values, vmin=-vmax, vmax=vmax, **options
+		)
+		plt.colorbar(p, ax=axes[a][b])
+		axes[a][b].set_title(title)
 
 	plt.tight_layout()
 	plt.savefig('contrast_comparison.png')
