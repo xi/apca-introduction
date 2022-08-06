@@ -62,6 +62,13 @@ def print_table(rows):
 	totals = [sum(r[:, i]) for i in range(r.shape[1])]
 	if len(rows) == len(rows[0]):
 		totals.append(sum(rows[i][i] for i in range(len(rows))))
+	else:
+		totals.append(
+			rows[0][0] + rows[0][1] + rows[0][2]
+			+ rows[1][3]
+			+ rows[2][4]
+			+ rows[3][5] + rows[3][6]
+		)
 	print_row(totals)
 	print()
 
