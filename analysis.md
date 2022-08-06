@@ -456,50 +456,61 @@ and 75 loosely correspond to 3, 4.5, and 7 in WCAG 2.x.
 
 Again I generated random color pairs and used them to compare APCA to WCAG 2.x:
 
-|        |    < 15 |   15-30 |  30-45 |  45-60 |  60-75 |  75-90 |   > 90 |   total |
-| ------:| -------:| -------:| ------:| ------:| ------:| ------:| ------:| -------:|
-|    < 3 |  35.3\* |  25.0\* | 11.3\* |    1.7 |    0.0 |    0.0 |    0.0 |    73.3 |
-|  3-4.5 |     0.0 |     0.8 |    6.2 |  6.5\* |    0.8 |    0.0 |    0.0 |    14.3 |
-|  4.5-7 |     0.0 |     0.0 |    0.8 |    3.8 |  3.7\* |    0.2 |    0.0 |     8.6 |
-|    > 7 |     0.0 |     0.0 |    0.0 |    0.2 |    1.8 |  1.6\* |  0.1\* |     3.8 |
-|  total |    35.3 |    25.8 |   18.3 |   12.3 |    6.4 |    1.8 |    0.1 |  83.5\* |
+|         |    < 15 |   15-30 |   30-45 |   45-60 |   60-75 |   75-90 |    > 90 |   total |
+| -------:| -------:| -------:| -------:| -------:| -------:| -------:| -------:| -------:|
+|     < 3 |  34.8\* |  25.1\* |  11.7\* |     1.5 |     0.0 |     0.0 |     0.0 |    73.0 |
+|   3-4.5 |     0.0 |     0.7 |     6.3 |   6.7\* |     0.9 |     0.0 |     0.0 |    14.5 |
+|   4.5-7 |     0.0 |     0.0 |     0.7 |     3.9 |   3.9\* |     0.2 |     0.0 |     8.7 |
+|     > 7 |     0.0 |     0.0 |     0.0 |     0.3 |     1.7 |   1.6\* |   0.2\* |     3.8 |
+|   total |    34.8 |    25.8 |    18.6 |    12.3 |     6.5 |     1.8 |     0.2 |  83.9\* |
 
 The columns correspond to APCA thresholds, the rows correspond to WCAG 2.x
-thresholds. For example, 6.2 % of the generated color pairs pass WCAG 2.x with
+thresholds. For example, 6.3 % of the generated color pairs pass WCAG 2.x with
 a contrast above 3, but fail APCA with a contrast below 45.
 
 The \* indicate cases where both a algorithms agree on a threshold level. The
 cell in the bottom right is the total number of cases where both algorithms
 agree, so it can be seen as an indicator of how similar the algorithms are.
 
-|           |    < 15 |   15-30 |   30-45 |   45-60 |   60-75 |   75-90 |    > 90 |   total |
-| ---------:| -------:| -------:| -------:| -------:| -------:| -------:| -------:| -------:|
-|     < 1.6 |  33.7\* |     0.7 |     0.0 |     0.0 |     0.0 |     0.0 |     0.0 |    34.5 |
-|   1.6-2.5 |     1.5 |  23.5\* |     0.8 |     0.0 |     0.0 |     0.0 |     0.0 |    25.9 |
-|   2.5-3.8 |     0.0 |     1.5 |  15.8\* |     0.2 |     0.0 |     0.0 |     0.0 |    17.5 |
-|   3.8-5.7 |     0.0 |     0.0 |     1.7 |  10.4\* |     0.0 |     0.0 |     0.0 |    12.2 |
-|   5.7-8.7 |     0.0 |     0.0 |     0.0 |     1.7 |   5.7\* |     0.0 |     0.0 |     7.4 |
-|  8.7-13.2 |     0.0 |     0.0 |     0.0 |     0.0 |     0.6 |   1.8\* |     0.0 |     2.4 |
-|    > 13.2 |     0.0 |     0.0 |     0.0 |     0.0 |     0.0 |     0.0 |   0.1\* |     0.2 |
-|     total |    35.3 |    25.8 |    18.3 |    12.3 |     6.4 |     1.8 |     0.1 |  91.0\* |
+|         |    < 15 |   15-30 |   30-45 |   45-60 |   60-75 |   75-90 |    > 90 |   total |
+| -------:| -------:| -------:| -------:| -------:| -------:| -------:| -------:| -------:|
+|   < 3.5 |  34.8\* |  25.7\* |  15.1\* |     4.1 |     0.1 |     0.0 |     0.0 |    79.6 |
+| 3.5-3.5 |     0.0 |     0.1 |     3.5 |   6.5\* |     2.4 |     0.0 |     0.0 |    12.6 |
+|   5.5-6 |     0.0 |     0.0 |     0.1 |     1.7 |   3.3\* |     0.4 |     0.0 |     5.4 |
+|     > 8 |     0.0 |     0.0 |     0.0 |     0.1 |     0.8 |   1.4\* |   0.2\* |     2.4 |
+|   total |    34.8 |    25.8 |    18.6 |    12.3 |     6.5 |     1.8 |     0.2 |  86.9\* |
 
-The second table compares APCA to a modified WCAG 2.x contrast with a flare
-value of 0.4. The thresholds were derived by applying the normalization steps
-described above to the APCA thresholds. As expected, the difference is reduced
-significantly, though there is still a considerable difference left.
+The second table again compares APCA to WCAG 2.x, but this time I tweaked the
+thresholds to minimize the difference. This shows that some of the difference
+is caused by the choice of thresholds, not the formula itself.
+
+|         |    < 15 |   15-30 |   30-45 |   45-60 |   60-75 |   75-90 |    > 90 |   total |
+| -------:| -------:| -------:| -------:| -------:| -------:| -------:| -------:| -------:|
+|   < 1.6 |  33.3\* |     0.7 |     0.0 |     0.0 |     0.0 |     0.0 |     0.0 |    34.0 |
+| 1.6-2.5 |     1.4 |  23.5\* |     0.7 |     0.0 |     0.0 |     0.0 |     0.0 |    25.6 |
+| 2.5-3.9 |     0.0 |     1.6 |  16.8\* |     0.5 |     0.0 |     0.0 |     0.0 |    18.9 |
+|   3.9-6 |     0.0 |     0.0 |     1.1 |  11.2\* |     0.3 |     0.0 |     0.0 |    12.6 |
+|     6-9 |     0.0 |     0.0 |     0.0 |     0.6 |   5.9\* |     0.1 |     0.0 |     6.6 |
+|    9-13 |     0.0 |     0.0 |     0.0 |     0.0 |     0.3 |   1.7\* |     0.0 |     2.0 |
+|    > 13 |     0.0 |     0.0 |     0.0 |     0.0 |     0.0 |     0.1 |   0.2\* |     0.2 |
+|   total |    34.8 |    25.8 |    18.6 |    12.3 |     6.5 |     1.8 |     0.2 |  92.5\* |
+
+The third table compares APCA to a modified WCAG 2.x contrast with a flare
+value of 0.4. As expected, the difference is reduced significantly, though
+there is still a considerable difference left.
 
 |         |    < 15 |   15-30 |   30-45 |   45-60 |   60-75 |   75-90 |    > 90 |   total |
 | -------:| -------:| -------:| -------:| -------:| -------:| -------:| -------:| -------:|
 |    < 15 |  33.6\* |     1.3 |     0.0 |     0.0 |     0.0 |     0.0 |     0.0 |    34.9 |
-|   15-30 |     1.3 |  23.1\* |     1.3 |     0.0 |     0.0 |     0.0 |     0.0 |    25.7 |
-|   30-45 |     0.0 |     1.4 |  16.5\* |     1.1 |     0.0 |     0.0 |     0.0 |    18.9 |
-|   45-60 |     0.0 |     0.0 |     1.2 |  10.4\* |     0.7 |     0.0 |     0.0 |    12.3 |
-|   60-75 |     0.0 |     0.0 |     0.0 |     0.8 |   5.2\* |     0.3 |     0.0 |     6.2 |
-|   75-90 |     0.0 |     0.0 |     0.0 |     0.0 |     0.3 |   1.5\* |     0.0 |     1.8 |
+|   15-30 |     1.2 |  23.2\* |     1.2 |     0.0 |     0.0 |     0.0 |     0.0 |    25.5 |
+|   30-45 |     0.0 |     1.3 |  16.3\* |     1.1 |     0.0 |     0.0 |     0.0 |    18.8 |
+|   45-60 |     0.0 |     0.0 |     1.2 |  10.4\* |     0.9 |     0.0 |     0.0 |    12.5 |
+|   60-75 |     0.0 |     0.0 |     0.0 |     0.8 |   5.4\* |     0.2 |     0.0 |     6.4 |
+|   75-90 |     0.0 |     0.0 |     0.0 |     0.0 |     0.3 |   1.6\* |     0.1 |     1.9 |
 |    > 90 |     0.0 |     0.0 |     0.0 |     0.0 |     0.0 |     0.0 |   0.1\* |     0.1 |
-|   total |    34.9 |    25.8 |    18.9 |    12.3 |     6.2 |     1.8 |     0.1 |  90.4\* |
+|   total |    34.8 |    25.8 |    18.6 |    12.3 |     6.5 |     1.8 |     0.2 |  90.4\* |
 
-The third table compares APCA to itself, but with foreground and background
+The last table compares APCA to itself, but with foreground and background
 switched. WCAG 2.x does not make a difference between foreground and
 background, so this comparison would be pointless there. APCA on the other hand
 uses different exponents for foreground and background. This table shows that

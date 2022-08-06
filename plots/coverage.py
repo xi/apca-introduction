@@ -3,7 +3,8 @@ import math
 import numpy as np
 
 WCAG_LEVELS = [3, 4.5, 7]
-WCAG4_LEVELS = [1.6, 2.5, 3.8, 5.7, 8.7, 13.2]
+WCAG_LEVELS_TWEAKED = [3.5, 5.5, 8]
+WCAG4_LEVELS = [1.6, 2.5, 3.9, 6, 9, 13]
 APCA_LEVELS = [15, 30, 45, 60, 75, 90]
 
 
@@ -50,7 +51,7 @@ def iter_levels(levels):
 
 def print_row(row, sep=' | '):
 	_row = [''] + [f'{x:.1f}' for x in row] + ['']
-	_row = [f'{s: >5}' for s in _row]
+	_row = [f'{s: >7}' for s in _row]
 	print(sep.join(_row).strip())
 
 
@@ -90,6 +91,7 @@ if __name__ == '__main__':
 
 	for values1, levels1, values2, levels2 in [
 		(wcag, WCAG_LEVELS, apca, APCA_LEVELS),
+		(wcag, WCAG_LEVELS_TWEAKED, apca, APCA_LEVELS),
 		(wcag4, WCAG4_LEVELS, apca, APCA_LEVELS),
 		(apcai, APCA_LEVELS, apca, APCA_LEVELS),
 	]:
