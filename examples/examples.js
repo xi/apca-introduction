@@ -5,6 +5,7 @@ const LEVEL_LABELS = ['×', 'A', 'AA', 'AAA'];
 
 const COLORS = [
 	['#44bb44', '#000000', '#ffffff'],
+	['#9999ff', '#000000', '#ffffff'],
 	['#dd44ee', '#000000', '#ffffff'],
 	['#ff4422', '#000000', '#ffffff'],
 	['#11bbff', '#220044', '#440022'],
