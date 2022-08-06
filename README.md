@@ -61,7 +61,7 @@ function contrast(fg, bg) {
   background.
 - The result of APCA is negative for light text on dark background. You will
   usually work with the absolute value though.
-- WCAG 2.x defined three thresholds: 3:1, 4.5:1, and 7:1. These roughly
+- WCAG 2.x defines three thresholds: 3:1, 4.5:1, and 7:1. These roughly
   correspond to 45, 60, and 75 in APCA.
 - Compared to WCAG 2.x, APCA reports drastically lower contrast for darker
   colors. It also reports slightly higher contrast for lighter colors.
