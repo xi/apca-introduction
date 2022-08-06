@@ -53,19 +53,19 @@ function contrast(fg, bg) {
 
 ([Source](https://github.com/Myndex/SAPC-APCA/blob/master/documentation/APCA-W3-LaTeX.md))
 
-## Migrating from WCAG 2.x
+## Migrating from WCAG 2.x
 
-- WCAG 2.x produces a ratio between 1:1 and 21:1. APCA produces a value roughly
+- WCAG 2.x produces a ratio between 1:1 and 21:1. APCA produces a value roughly
   between -100 and 100.
-- Unlike WCAG 2.x, APCA reports different values when you switch foreground and
+- Unlike WCAG 2.x, APCA reports different values when you switch foreground and
   background.
 - The result of APCA is negative for light text on dark background. You will
   usually work with the absolute value though.
-- WCAG 2.x defined three thresholds: 3:1, 4.5:1, and 7:1. These roughly
+- WCAG 2.x defined three thresholds: 3:1, 4.5:1, and 7:1. These roughly
   correspond to 45, 60, and 75 in APCA.
-- Compared to WCAG 2.x, APCA reports drastically lower contrast for darker
+- Compared to WCAG 2.x, APCA reports drastically lower contrast for darker
   colors. It also reports slightly higher contrast for lighter colors.
-- With WCAG 2.x, 27% of all color combinations have a contrast of at least 3,
+- With WCAG 2.x, 27% of all color combinations have a contrast of at least 3,
   12% have at least 4.5, and 4% have at least 7. With APCA, only 21% of all
   color combinations have a contrast of at least 45, 8% have at least 60, and
   2% have at least 75.
@@ -74,7 +74,7 @@ Also see my [detailed analysis](analysis.md).
 
 ## Examples
 
-[![Visual comparison of WCAG 2.x and APCA](examples/screenshot.png)](https://xi.github.io/apca-introduction/examples/)
+[![Visual comparison of WCAG 2.x and APCA](examples/screenshot.png)](https://xi.github.io/apca-introduction/examples/)
 
 ## Status
 
@@ -85,7 +85,7 @@ Neither is officially recommended by the W3C yet.
 
 Evaluating a contrast algorithm is extremly difficult because contrast
 perception varies from person to person and also depends on the lighing
-conditions. Whether APCA is actually better than WCAG 2.x is therefore hard to
+conditions. Whether APCA is actually better than WCAG 2.x is therefore hard to
 tell. I personally could not say from the examples above which one works better
 for me. A rigorous scientific evaluation is not yet available
 ([issue](https://github.com/w3c/silver/issues/574)).

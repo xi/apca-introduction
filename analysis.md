@@ -2,7 +2,7 @@
 
 I am a regular web developer with a bachelor's degree in math, but without any
 training in the science around visual perception. That's why I cannot evaluate
-whether APCA is *better* than WCAG 2.x. Instead this is a systematic
+whether APCA is *better* than WCAG 2.x. Instead this is a systematic
 comparison of their mathematical properties.
 
 ## Context: The Web Content Accessibility Guidelines (WCAG)
@@ -38,7 +38,7 @@ When we speak about contrast, we actually mean a few different things:
     decision?
 -   Which parts of the UI need to be checked?
 
-In the following sections I will take a closer look at how WCAG 2.x and APCA
+In the following sections I will take a closer look at how WCAG 2.x and APCA
 answer each of these questions.
 
 ## The contrast formula
@@ -93,7 +93,7 @@ In 1961 Stevens published a different model that was found to more accurately
 predict human vision. It has the form `L = a * pow(Y, alpha) + b`. The exponent
 `alpha` has a value of approximately 1/3.
 
-### WCAG 2.x
+### WCAG 2.x
 
 ```js
 function gamma(x) {
@@ -121,7 +121,7 @@ function contrast(fg, bg) {
 };
 ```
 
-In WCAG 2.x we see the same general structure as in the naive approach, but the
+In WCAG 2.x we see the same general structure as in the naive approach, but the
 individual steps are more complicated:
 
 Colors on the web are defined in the [sRGB color space]. The first part of this
@@ -217,7 +217,7 @@ To make it easier to compare the two formulas, I will normalize them:
 -   preserve polarity
 -   scale to a range of -1 to 1
 
-WCAG 2.x therefore becomes:
+WCAG 2.x therefore becomes:
 
 ```js
 function gamma(x) {
@@ -304,7 +304,7 @@ corresponds to background luminance, the y-axis corresponds to foreground
 luminance (both using the APCA formula). The color of the dots indicated the
 differences between the respective formulas.
 
-The plot on the bottom right compares APCA to WCAG 2.x. As we can see, the
+The plot on the bottom right compares APCA to WCAG 2.x. As we can see, the
 biggest differences are in areas where one color is extremely light or
 extremely dark. For light colors, APCA predicts an even higher contrast
 (difference is in the same direction as contrast polarity). For dark colors,
@@ -312,7 +312,7 @@ APCA predicts a lower contrast (difference is inverse to contrast polarity).
 The difference goes up to 20%.
 
 The other three plots compare APCA to a modified version of APCA where one of
-the steps has been replaced by the corresponding step from WCAG 2.x. This way
+the steps has been replaced by the corresponding step from WCAG 2.x. This way
 we can see that `sRGBtoY` contributes 4% to the difference, `YtoL` contributes
 15%, and `contrast` contributes 3%.
 
@@ -324,18 +324,18 @@ I took a closer look at it.
 I plotted curves for both the Weber-Fechner model (log) and the Stevens model
 (pow) with different parameters.
 
--   The log curve with a flare of 0.05 (WCAG 2) is closer to the pow curve with
+-   The log curve with a flare of 0.05 (WCAG 2) is closer to the pow curve with
     an exponent of 1/3
 -   The log curve with a flare of 0.4 is closer to the pow curves with
     exponents 0.56 and 0.68 (similar to APCA)
 -   The pow curve with an exponent of 1/3 **and** a flare of 0.025 is somewhere
     in the middle.
 
-This shows that a big part of the different results between WCAG 2.x and APCA
+This shows that a big part of the different results between WCAG 2.x and APCA
 are caused by a different choice in parameters. If we were to change the flare
-value in WCAG 2.x to 0.4 we would get results much closer to APCA. And if we
+value in WCAG 2.x to 0.4 we would get results much closer to APCA. And if we
 were to change the exponents in APCA to 1/3 we would get results much closer to
-WCAG 2.x.
+WCAG 2.x.
 
 ## Spatial frequency
 
@@ -364,21 +364,21 @@ wildly different interpretations of these values. Since fonts depend on user
 preference, we cannot know beforehand which fonts will be used. We also don't
 know the size of device pixels or how far the user is from the screen.
 
-So how do WCAG 2.x and APCA tackle this topic?
+So how do WCAG 2.x and APCA tackle this topic?
 
-### WCAG 2.x
+### WCAG 2.x
 
-WCAG 2.x makes the distinction between regular and [large text]. Large text is
+WCAG 2.x makes the distinction between regular and [large text]. Large text is
 defined as anything above 18 point or 14 point bold. The definition comes with
 a lot of notes that explain the limits of that approach though, e.g. that some
 fonts are extremely thin.
 
-WCAG 2.x also comes with some rules that allow users to adapt spatial frequency
+WCAG 2.x also comes with some rules that allow users to adapt spatial frequency
 to their needs: [1.4.4] requires that users can resize the text, [1.4.10]
 requires that they can zoom the whole page, and [1.4.12] requires that they can
 adjust text spacing.
 
-So WCAG 2.x doesn't really attempt to model spatial frequency for web content.
+So WCAG 2.x doesn't really attempt to model spatial frequency for web content.
 It elegantly works around the issue by handing control over to the users who
 have all the facts.
 
@@ -408,10 +408,10 @@ above is complicated and leaves a lot of wiggle room, especially in steps 2 and
 
 So far we have mainly looked at text. But other parts of a website also need to
 be distinguishable. The concept of spatial frequency was explicitly picked
-because it can cover those cases. What do WCAG 2.x and APCA have to say about
+because it can cover those cases. What do WCAG 2.x and APCA have to say about
 this?
 
-### WCAG 2.x
+### WCAG 2.x
 
 [1.4.11] is specifically about this issue. It basically says that all non-text
 content that is not inactive, decorative, or controlled by the browser must
@@ -427,9 +427,9 @@ find any discussion of that though.
 
 ## Thresholds
 
-### WCAG 2.x
+### WCAG 2.x
 
-WCAG 2.x defines 3 thresholds: 3, 4.5, and 7.
+WCAG 2.x defines 3 thresholds: 3, 4.5, and 7.
 
 -   non-text content must have a contrast of at least 3
 -   large text must have a contrast of at least 3 (AA) or 4.5 (AAA)
@@ -452,9 +452,9 @@ How these values were derived is not completely clear:
 APCA defines 6 thresholds: 15, 30, 45, 60, 75, 90.
 
 The required threshold depends on the spatial frequency (see above). 45, 60,
-and 75 loosely correspond to 3, 4.5, and 7 in WCAG 2.x.
+and 75 loosely correspond to 3, 4.5, and 7 in WCAG 2.x.
 
-Again I generated random color pairs and used them to compare APCA to WCAG 2.x:
+Again I generated random color pairs and used them to compare APCA to WCAG 2.x:
 
 |        |    < 15 |   15-30 |  30-45 |  45-60 |  60-75 |  75-90 |   > 90 |   total |
 | ------:| -------:| -------:| ------:| ------:| ------:| ------:| ------:| -------:|
@@ -464,8 +464,8 @@ Again I generated random color pairs and used them to compare APCA to WCAG 2.x:
 |    > 7 |     0.0 |     0.0 |    0.0 |    0.2 |    1.8 |  1.6\* |  0.1\* |     3.8 |
 |  total |    35.3 |    25.8 |   18.3 |   12.3 |    6.4 |    1.8 |    0.1 |  83.5\* |
 
-The columns correspond to APCA thresholds, the rows correspond to WCAG 2.x
-thresholds. For example, 6.2 % of the generated color pairs pass WCAG 2.x with
+The columns correspond to APCA thresholds, the rows correspond to WCAG 2.x
+thresholds. For example, 6.2 % of the generated color pairs pass WCAG 2.x with
 a contrast above 3, but fail APCA with a contrast below 45.
 
 The \* indicate cases where both a algorithms agree on a threshold level. The
@@ -483,7 +483,7 @@ agree, so it can be seen as an indicator of how similar the algorithms are.
 |    > 13.2 |     0.0 |     0.0 |     0.0 |     0.0 |     0.0 |     0.0 |   0.1\* |     0.2 |
 |     total |    35.3 |    25.8 |    18.3 |    12.3 |     6.4 |     1.8 |     0.1 |  91.0\* |
 
-The second table compares APCA to a modified WCAG 2.x contrast with a flare
+The second table compares APCA to a modified WCAG 2.x contrast with a flare
 value of 0.4. The thresholds were derived by applying the normalization steps
 described above to the APCA thresholds. As expected, the difference is reduced
 significantly, though there is still a considerable difference left.
@@ -500,7 +500,7 @@ significantly, though there is still a considerable difference left.
 |   total |    34.9 |    25.8 |    18.9 |    12.3 |     6.2 |     1.8 |     0.1 |  90.4\* |
 
 The third table compares APCA to itself, but with foreground and background
-switched. WCAG 2.x does not make a difference between foreground and
+switched. WCAG 2.x does not make a difference between foreground and
 background, so this comparison would be pointless there. APCA on the other hand
 uses different exponents for foreground and background. This table shows that
 this does have a small but still significant impact on the results.
@@ -509,7 +509,7 @@ this does have a small but still significant impact on the results.
 
 In this analysis I took a deeper look at the Accessible Perceptual Contrast
 Algorithm (APCA), a new algorithm to predict visual contrast. I compared it to
-an existing algorithm that has been part of WCAG 2.x, the current standard for
+an existing algorithm that has been part of WCAG 2.x, the current standard for
 accessibility testing for the web.
 
 Though still in early development, APCA is very different from the older
@@ -526,8 +526,8 @@ algorithm in many key aspects:
 -   It uses a more sophisticated link between spatial frequency and minimum
     color contrast that might allow for more nuanced thresholds.
 
-The new contrast formula agrees with WCAG 2.x for 83.5% of randomly picked
-color pairs. That number rises to 91% for a modified WCAG 2.x formula with a
+The new contrast formula agrees with WCAG 2.x for 83.5% of randomly picked
+color pairs. That number rises to 91% for a modified WCAG 2.x formula with a
 flare value of 0.4. As far as I understand, this is not a realistic value for
 flare. So the physical interpretation might be incorrect. This would however
 explain why APCA reports lower contrast for darker colors.
