@@ -537,8 +537,8 @@ algorithm in many key aspects:
 -   It uses a more sophisticated link between spatial frequency and minimum
     color contrast that might allow for more nuanced thresholds.
 
-The new contrast formula agrees with WCAG 2.x for 83.5% of randomly picked
-color pairs. That number rises to 91% for a modified WCAG 2.x formula with a
+The new contrast formula agrees with WCAG 2.x for 83.9% of randomly picked
+color pairs. That number rises to 92.5% for a modified WCAG 2.x formula with a
 flare value of 0.4. As far as I understand, this is not a realistic value for
 flare. So the physical interpretation might be incorrect. This would however
 explain why APCA reports lower contrast for darker colors.
