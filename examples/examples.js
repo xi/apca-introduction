@@ -1,7 +1,8 @@
 import * as wcag from '../wcag2.js';
 import * as apca from '../apca.js';
 
-const LEVEL_LABELS = ['×', 'A', 'AA', 'AAA'];
+const WCAG_LABELS = ['×', '> 3', '> 4.5', '> 7'];
+const APCA_LABELS = ['×', '> 45', '> 60', '> 75'];
 
 const COLORS = [
 	['#888888', '#000000', '#ffffff'],
@@ -44,13 +45,13 @@ var addExample = function(fg, bg) {
 	var wcag_contrast = wcag.contrast(cfg, cbg);
 	var wcag_level = getLevel(wcag_contrast, wcag);
 	clone.querySelector('.wcag output').textContent = wcag.abs(wcag_contrast).toFixed(1);
-	clone.querySelector('.wcag .badge').textContent = LEVEL_LABELS[wcag_level];
+	clone.querySelector('.wcag .badge').textContent = WCAG_LABELS[wcag_level];
 	clone.querySelector('.wcag .badge').classList.add(`badge-${wcag_level}`);
 
 	var apca_contrast = apca.contrast(cfg, cbg);
 	var apca_level = getLevel(apca_contrast, apca);
 	clone.querySelector('.apca output').textContent = apca_contrast.toFixed(0);
-	clone.querySelector('.apca .badge').textContent = LEVEL_LABELS[apca_level];
+	clone.querySelector('.apca .badge').textContent = APCA_LABELS[apca_level];
 	clone.querySelector('.apca .badge').classList.add(`badge-${apca_level}`);
 
 	document.body.append(clone);
