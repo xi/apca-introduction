@@ -454,6 +454,8 @@ APCA defines 6 thresholds: 15, 30, 45, 60, 75, 90.
 The required threshold depends on the spatial frequency (see above). 45, 60,
 and 75 loosely correspond to 3, 4.5, and 7 in WCAG 2.x.
 
+### Comparison
+
 Again I generated random color pairs and used them to compare APCA to WCAG 2.x:
 
 |         |    < 15 |   15-30 |   30-45 |   45-60 |   60-75 |   75-90 |    > 90 |   total |
