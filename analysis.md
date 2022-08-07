@@ -91,7 +91,7 @@ the Weber-Fechner law.
 
 In 1961 Stevens published a different model that was found to more accurately
 predict human vision. It has the form `L = a * pow(Y, alpha) + b`. The exponent
-`alpha` has a value of approximately 1/3.
+`alpha` has a value of approximately 1/3.[^1]
 
 ### WCAG 2.x
 
@@ -135,7 +135,7 @@ a much bigger response than the same amount of blue light.
 Next, 0.05 is added to both values to account for ambient light that is
 reflected on the screen (flare). Since we are in the domain of physical light,
 we can just add these values. 0.05 mean that we assume that the flare amounts
-to 5% of the white of the screen.
+to 5% of the white of the screen.[^2]
 
 Then the Weber contrast is calculated. Note that `(Y1 - Y2) / Y2` is the same
 as `Y1 / Y2 - 1`. The shift by 1 is removed because it has no impact on the
@@ -351,7 +351,7 @@ color contrast is needed.
 There is one caveat though: The spatial frequency only defines the contrast
 threshold under which a pattern is not perceivable at all. Above that it has
 barely any effect. So we the best way to use it is to define a minimum required
-color contrast based on spatial frequency.
+color contrast based on spatial frequency.[^3]
 
 Interestingly, a lower spatial frequency is not always easier to read though.
 [Studies have shown] that the optimal spatial frequency is at about 5-7 cycles
@@ -561,3 +561,7 @@ figuring out what questions need to be answered.
 [does attempt to model spatial frequency]: https://git.apcacontrast.com/WEBTOOLS/APCA/
 [1.4.11]: https://www.w3.org/TR/WCAG21/#non-text-contrast
 [lack of publicly available evidence]: https://github.com/w3c/silver/issues/574
+
+[^1]: [Monaci, Gianluca & Menegaz, Gloria & Susstrunk, S. & Knoblauch, Kenneth. (2022). Color Contrast Detection in Spatial Chromatic Noise.](https://www.researchgate.net/publication/37435854_Color_Contrast_Detection_in_Spatial_Chromatic_Noise)
+[^2]: [Hwang AD, Peli E. (2016). New Contrast Metric for Realistic Display Performance Measure.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5489230/)
+[^3]: [Georgeson, M. A., & Sullivan, G. D. (1975). Contrast constancy: deblurring in human vision by spatial frequency channels.](https://pubmed.ncbi.nlm.nih.gov/1206570/)
