@@ -84,7 +84,7 @@ However, currently both WCAG 3.0 and APCA are still in early development.
 Neither is officially recommended by the W3C yet.
 
 Evaluating a contrast algorithm is extremly difficult because contrast
-perception varies from person to person and also depends on the lighing
+perception varies from person to person and also depends on the lighting
 conditions. Whether APCA is actually better than WCAG 2.x is therefore hard to
 tell. I personally could not say from the examples above which one works better
 for me. A rigorous scientific evaluation is not yet available
