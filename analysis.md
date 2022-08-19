@@ -90,8 +90,7 @@ perceived measure `J` can be expressed as `J = a * log(Y) + b`. This is called
 the Weber-Fechner law.
 
 In 1961 Stevens published a different model that was found to more accurately
-predict human vision. It has the form `J = a * pow(Y, alpha) + b`. The exponent
-`alpha` has a value of approximately 1/3.[^1]
+predict human vision. It has the form `J = a * pow(Y, alpha) + b`.[^1]
 
 ### WCAG 2.x
 
@@ -334,6 +333,15 @@ are caused by a different choice in parameters. If we were to change the flare
 value in WCAG 2.x to 0.4 we would get results much closer to APCA. And if we
 were to change the exponents in APCA to 1/3 we would get results much closer to
 WCAG 2.x.
+
+The most complete (but also most complex) color appearance model currently
+available is [CIECAM02](https://en.wikipedia.org/wiki/CIECAM02). Its definition
+of lightness can be approximated as `100 * pow(Y, 0.42 * c * z)`, where `c` and
+`z` are parameters that depend on the lighting conditions.  The total exponent
+can have values between 0.31 and 0.72.
+
+Given that model, WCAG 2.x is on the lower (darker) end of possible exponents,
+while APCA goes to the other (lighter) extreme.
 
 ## Spatial frequency
 
