@@ -343,6 +343,12 @@ can have values between 0.31 and 0.72.
 Given that model, WCAG 2.x is on the lower (darker) end of possible exponents,
 while APCA goes to the other (lighter) extreme.
 
+It seems reasonable to use a lower exponent for light-on-dark color pairs.
+First, because the background color itself is often a significant part of the
+lighting conditions, and second, because some software automatically switches
+to dark mode at night. Surprisingly, APCA does the exact opposite and uses
+higher exponents in that situation.
+
 ## Spatial frequency
 
 Smaller text is generally harder to read than bigger text. In a more general
