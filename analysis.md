@@ -188,7 +188,8 @@ The conversion from sRGB to luminance uses similar coefficients, but the
 non-linear part is very different. The author of APCA provides some motivation
 for these changes in the article [Regarding APCA Exponents]. The main argument
 seems to be that this is supposed to more closely model real-world computer
-screens. This document also explains that this step incorporates flare.
+screens. This step also incorporates a flare of `Math.pow(0.022, 1.414) ~=
+0.0045`.
 
 Next, the contrast is calculated based on the Stevens model. Interestingly,
 APCA uses four different exponents for light foreground (0.62), dark foreground
@@ -326,7 +327,7 @@ I plotted curves for both the Weber-Fechner model (log) and the Stevens model
 -   The log curve with a flare of 0.05 (WCAG 2) is closer to the pow curve with
     an exponent of 1/3 and a flare of 0.0025
 -   The log curve with a flare of 0.4 is closer to the pow curves with
-    exponents 0.56 and 0.68 (similar to APCA)
+    exponents 0.56 and 0.68 and a flare of 0.0045 (similar to APCA)
 
 This shows that a big part of the different results between WCAG 2.x and APCA
 are caused by a different choice in parameters. If we were to change the flare
