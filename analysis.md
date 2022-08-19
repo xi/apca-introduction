@@ -348,7 +348,7 @@ color contrast is needed.
 
 There is one caveat though: The spatial frequency only defines the contrast
 threshold under which a pattern is not perceivable at all. Above that it has
-barely any effect. So we the best way to use it is to define a minimum required
+barely any effect. So the best way to use it is to define a minimum required
 color contrast based on spatial frequency.[^3]
 
 Interestingly, a lower spatial frequency is not always easier to read though.
