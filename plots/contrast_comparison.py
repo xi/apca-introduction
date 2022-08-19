@@ -12,8 +12,8 @@ def wcag_l(y, flare=0.05):
 	return np.log(y / flare + 1) / np.log(1 / flare + 1)
 
 
-def wcag_contrast(lfg, lbg):
-	return lbg - lfg
+def wcag_contrast(jfg, jbg):
+	return jbg - jfg
 
 
 def apca_y(color):
@@ -28,10 +28,10 @@ def apca_l(y):
 	return y ** 0.6
 
 
-def apca_contrast(lfg, lbg):
-	_lfg = lfg ** (np.where(lbg > lfg, 0.57, 0.62) / 0.6)
-	_lbg = lbg ** (np.where(lbg > lfg, 0.56, 0.65) / 0.6)
-	return _lbg - _lfg
+def apca_contrast(jfg, jbg):
+	_jfg = jfg ** (np.where(jbg > jfg, 0.57, 0.62) / 0.6)
+	_jbg = jbg ** (np.where(jbg > jfg, 0.56, 0.65) / 0.6)
+	return _jbg - _jfg
 
 
 if __name__ == '__main__':
@@ -48,13 +48,13 @@ if __name__ == '__main__':
 
 	apca_yfg = apca_y(fg)
 	apca_ybg = apca_y(bg)
-	apca_lfg = apca_l(apca_yfg)
-	apca_lbg = apca_l(apca_ybg)
-	apca = apca_contrast(apca_lfg, apca_lbg)
+	apca_jfg = apca_l(apca_yfg)
+	apca_jbg = apca_l(apca_ybg)
+	apca = apca_contrast(apca_jfg, apca_jbg)
 
 	for a, b, y, l, contrast, title in [
 		(0, 0, wcag_y, apca_l, apca_contrast, 'sRGBtoY'),
-		(0, 1, apca_y, wcag_l, apca_contrast, 'YtoL'),
+		(0, 1, apca_y, wcag_l, apca_contrast, 'YtoJ'),
 		(1, 0, apca_y, apca_l, wcag_contrast, 'contrast'),
 		(1, 1, wcag_y, wcag_l, wcag_contrast, 'all'),
 	]:

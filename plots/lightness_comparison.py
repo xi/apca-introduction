@@ -8,7 +8,7 @@ def norm(x, f):
 
 if __name__ == '__main__':
 	plt.xlabel('luminance of screen (Y)')
-	plt.ylabel('predicted perceived lightness (L)')
+	plt.ylabel('predicted perceived lightness (J)')
 
 	x = np.linspace(0, 1) ** 2
 	legend = []

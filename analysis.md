@@ -53,15 +53,15 @@ correct 100% of the time.
 ### A naive approach
 
 ```js
-function sRGBtoL(srgb) {
+function sRGBtoJ(srgb) {
   return (srgb[0] + srgb[1] + srgb[2]) / 3;
 }
 
 function contrast(fg, bg) {
-  var lfg = sRGBtoL(fg);
-  var lbg = sRGBtoL(bg);
+  var jfg = sRGBtoJ(fg);
+  var jbg = sRGBtoJ(bg);
 
-  return lbg - lfg;
+  return jbg - jfg;
 };
 ```
 
@@ -73,7 +73,7 @@ values.
 
 ### Historical context
 
-Lightness (L) is a measure for the perceived amount of light. Luminance (Y) is
+Lightness (J) is a measure for the perceived amount of light. Luminance (Y) is
 a measure for the physical amount of light. In order to understand perceived
 contrast, we first have to understand the relationship between luminance and
 lightness.
@@ -86,11 +86,11 @@ Y2` has the same value. This is known as Weber contrast and has been called the
 ["gold standard" for text contrast].
 
 Fechner concluded that the relation between a physical measure `Y` and a
-perceived measure `L` can be expressed as `L = a * log(Y) + b`. This is called
+perceived measure `J` can be expressed as `J = a * log(Y) + b`. This is called
 the Weber-Fechner law.
 
 In 1961 Stevens published a different model that was found to more accurately
-predict human vision. It has the form `L = a * pow(Y, alpha) + b`. The exponent
+predict human vision. It has the form `J = a * pow(Y, alpha) + b`. The exponent
 `alpha` has a value of approximately 1/3.[^1]
 
 ### WCAG 2.x
@@ -236,7 +236,7 @@ function sRGBtoY(srgb) {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
-function YtoL(y) {
+function YtoJ(y) {
   return (Math.log(y + 0.05) - Math.log(0.05)) / Math.log(21);
 }
 
@@ -244,10 +244,10 @@ function contrast(fg, bg) {
   var yfg = sRGBtoY(fg);
   var ybg = sRGBtoY(bg);
 
-  var lfg = YtoL(yfg);
-  var lbg = YtoL(ybg);
+  var jfg = YtoJ(yfg);
+  var jbg = YtoJ(ybg);
 
-  return lbg - lfg;
+  return jbg - jfg;
 };
 
 function normalize(c) {
@@ -270,7 +270,7 @@ function sRGBtoY(srgb) {
   return y;
 }
 
-function YtoL(y) {
+function YtoJ(y) {
     return Math.pow(y, 0.6);
 }
 
@@ -278,13 +278,13 @@ function contrast(fg, bg) {
   var yfg = sRGBtoY(fg);
   var ybg = sRGBtoY(bg);
 
-  var lfg = YtoL(yfg);
-  var lbg = YtoL(ybg);
+  var jfg = YtoJ(yfg);
+  var jbg = YtoJ(ybg);
 
   if (ybg > yfg) {
-    return Math.pow(lbg, 0.56 / 0.6) - Math.pow(lfg, 0.57 / 0.6);
+    return Math.pow(jbg, 0.56 / 0.6) - Math.pow(jfg, 0.57 / 0.6);
   } else {
-    return Math.pow(ybg, 0.65 / 0.6) - Math.pow(lfg, 0.62 / 0.6);
+    return Math.pow(jbg, 0.65 / 0.6) - Math.pow(jfg, 0.62 / 0.6);
   }
 };
 
@@ -313,7 +313,7 @@ The difference goes up to 20%.
 
 The other three plots compare APCA to a modified version of APCA where one of
 the steps has been replaced by the corresponding step from WCAG 2.x. This way
-we can see that `sRGBtoY` contributes 4% to the difference, `YtoL` contributes
+we can see that `sRGBtoY` contributes 4% to the difference, `YtoJ` contributes
 15%, and `contrast` contributes 3%.
 
 Since the conversion from luminance to lightness causes the biggest difference,
