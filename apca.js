@@ -1,4 +1,5 @@
-export const levels = [15, 30, 45, 60, 75, 90];
+export const levels = [0,15,22,30,37.5,45,52.5,60,67.5,75,82.5,90,110];
+export const arraySize = levels.length;
 
 const tests = [
   [[136, 136, 136], [255, 255, 255], 63.056469930209424],
