@@ -91,6 +91,7 @@ Also see [APCA In A Nutshell](https://git.apcacontrast.com/documentation/APCA_in
 
 ### Official Comparison from Myndex Research:
 This comparison uses achromatic grays as those define readability.
+
 <img width="540" alt="Visual comparison of WCAG 2.x and APCA" src="https://git.apcacontrast.com/images/ColumnCompareAll400.png">
 
 ## Status
@@ -112,8 +113,4 @@ On the other hand, the *thresholds* chosen for guidelines—i.e., how much contr
 ## More
 
 For a deeper dive, start with [_"Why APCA"_](https://git.apcacontrast.com/documentation/WhyAPCA) and the documentation [_README_](https://git.apcacontrast.com/documentation/README) and the more in depth [link catalog](https://git.myndex.com) of related resources.
-
-
-
-
 
