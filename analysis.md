@@ -133,7 +133,7 @@ a much bigger response than the same amount of blue light.
 
 Next, 0.05 is added to both values to account for ambient light that is
 reflected on the screen (flare). Since we are in the domain of physical light,
-we can just add these values. 0.05 mean that we assume that the flare amounts
+we can just add these values. 0.05 means that we assume that the flare amounts
 to 5% of the white of the screen.[^2]
 
 Then the Weber contrast is calculated. Note that `(Y1 - Y2) / Y2` is the same
