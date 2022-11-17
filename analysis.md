@@ -127,9 +127,7 @@ Colors on the web are defined in the [sRGB color space]. The first part of this
 formula is the official formula to convert a sRGB color to luminance. Doubling
 sRGB values (e.g. from `#444` to `#888`) does not actually double the physical
 amount of light, so the first step is a non-linear "gamma decoding". Then the
-red, green, and blue channels are weighted to sum to the final luminance. The
-weights result from different sensitivities in the human eye: Yellow light has
-a much bigger response than the same amount of blue light.
+red, green, and blue channels are weighted to sum to the final luminance.
 
 Next, 0.05 is added to both values to account for ambient light that is
 reflected on the screen (flare). Since we are in the domain of physical light,
