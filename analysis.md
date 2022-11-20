@@ -195,7 +195,7 @@ APCA uses four different exponents for light foreground (0.62), dark foreground
 
 The final steps do some scaling and shifting that only serves to get nice
 threshold values. Just like the shift by 1 in the WCAG formula, this does not
-effect results as long as the thresholds are adapted accordingly. Note that the
+affect results as long as the thresholds are adapted accordingly. Note that the
 `< 0.1` condition only affects contrasts that are below the lowest threshold
 anyway.
 
