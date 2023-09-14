@@ -333,14 +333,14 @@ value in WCAG 2.x to 0.4 we would get results much closer to APCA. And if we
 were to change the exponents in APCA to 1/3 we would get results much closer to
 WCAG 2.x.
 
+Our vision adapts to the lighting conditions. In the dark, we are much better
+at discerning dark colors. A lower exponent models these darker conditions.
 The most complete (but also most complex) color appearance model currently
-available is [CIECAM02](https://en.wikipedia.org/wiki/CIECAM02). Its definition
-of lightness can be approximated as `100 * pow(Y, 0.42 * c * z)`, where `c` and
-`z` are parameters that depend on the lighting conditions.  The total exponent
-can have values between 0.31 and 0.72.
-
-Given that model, WCAG 2.x is on the lower (darker) end of possible exponents,
-while APCA goes to the other (lighter) extreme.
+available is [CIECAM02](https://en.wikipedia.org/wiki/CIECAM02). It uses
+exponents between 0.31 and 0.72. Given that model, WCAG 2.x is on the lower
+(darker) end of possible exponents, while APCA goes to the other (lighter)
+extreme. Choosing the right parameters depends on which lighting conditions we
+want to model, and that is ultimately a policy decision.
 
 It seems reasonable to use a lower exponent for light-on-dark color pairs.
 First, because the background color itself is often a significant part of the
