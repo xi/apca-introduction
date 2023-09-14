@@ -339,8 +339,8 @@ The most complete (but also most complex) color appearance model currently
 available is [CIECAM02](https://en.wikipedia.org/wiki/CIECAM02). It uses
 exponents between 0.31 and 0.72. Given that model, WCAG 2.x is on the lower
 (darker) end of possible exponents, while APCA goes to the other (lighter)
-extreme. Choosing the right parameters depends on which lighting conditions we
-want to model, and that is ultimately a policy decision.
+extreme. This is consistent with the observation that APCA reports lower
+contrast for darker colors.
 
 It seems reasonable to use a lower exponent for light-on-dark color pairs.
 First, because the background color itself is often a significant part of the
@@ -541,8 +541,8 @@ algorithm in many key aspects:
 
 -   It uses a different luminance calculation that deviates from the standards
     but is supposed to be closer to real world usage.
--   It uses the more accurate Stevens model and significantly different
-    parameters for converting luminance to perceptual lightness.
+-   It uses the more accurate Stevens model and assumes different lighting
+    conditions for converting luminance to perceptual lightness.
 -   It adds an additional step where different exponents are applied to
     foreground and background.
 -   It uses different scaling. Crucially, this scaling is based on a difference
@@ -550,19 +550,13 @@ algorithm in many key aspects:
 -   It uses a more sophisticated link between spatial frequency and minimum
     color contrast that might allow for more nuanced thresholds.
 
-The new contrast formula agrees with WCAG 2.x for 83.9% of randomly picked
-color pairs. That number rises to 92.5% for a modified WCAG 2.x formula with a
-flare value of 0.4. As far as I understand, this is not a realistic value for
-flare. So the physical interpretation might be incorrect. This would however
-explain why APCA reports lower contrast for darker colors.
-
 So far I like many of the ideas of APCA, but I am not convinced that they are a
 significant enough improvement to justify breaking backwards compatibility. I
-am also concerned by the [lack of publicly available evidence]. Then again, the
-new algorithm cannot really be evaluated without first making some policy
-decisions, e.g. which viewing conditions we are aiming for. I hope this
-analysis can support the community in figuring out what questions need to be
-answered.
+am also concerned by the [lack of publicly available evidence].
+
+Much of the difference between APCA and WCAG 2 comes down to a different choice
+of parameters, and that is ultimately a policy decision. I hope this analysis
+can support the community in figuring out what questions need to be answered.
 
 [Web Content Accessibility Guidelines]: https://www.w3.org/TR/WCAG21/
 [sRGB color space]: https://en.wikipedia.org/wiki/SRGB
