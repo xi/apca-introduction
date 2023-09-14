@@ -541,8 +541,8 @@ algorithm in many key aspects:
 
 -   It uses a different luminance calculation that deviates from the standards
     but is supposed to be closer to real world usage.
--   It uses a more accurate model and significantly different parameters for
-    converting luminance to perceptual lightness.
+-   It uses the more accurate Stevens model and significantly different
+    parameters for converting luminance to perceptual lightness.
 -   It adds an additional step where different exponents are applied to
     foreground and background.
 -   It uses different scaling. Crucially, this scaling is based on a difference
