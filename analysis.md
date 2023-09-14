@@ -556,11 +556,13 @@ flare value of 0.4. As far as I understand, this is not a realistic value for
 flare. So the physical interpretation might be incorrect. This would however
 explain why APCA reports lower contrast for darker colors.
 
-So far I like many of the ideas of APCA, but I am concerned by the [lack of
-publicly available evidence]. Then again, the new algorithm cannot really be
-evaluated without first making some policy decisions, e.g. which viewing
-conditions we are aiming for. I hope this analysis can support the community in
-figuring out what questions need to be answered.
+So far I like many of the ideas of APCA, but I am not convinced that they are a
+significant enough improvement to justify breaking backwards compatibility. I
+am also concerned by the [lack of publicly available evidence]. Then again, the
+new algorithm cannot really be evaluated without first making some policy
+decisions, e.g. which viewing conditions we are aiming for. I hope this
+analysis can support the community in figuring out what questions need to be
+answered.
 
 [Web Content Accessibility Guidelines]: https://www.w3.org/TR/WCAG21/
 [sRGB color space]: https://en.wikipedia.org/wiki/SRGB
