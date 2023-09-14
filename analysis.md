@@ -249,7 +249,7 @@ function contrast(fg, bg) {
 };
 
 function normalize(c) {
-    return Math.log(c) / Math.log(21);
+  return Math.log(c) / Math.log(21);
 }
 ```
 
@@ -269,7 +269,7 @@ function sRGBtoY(srgb) {
 }
 
 function YtoJ(y) {
-    return Math.pow(y, 0.6);
+  return Math.pow(y, 0.6);
 }
 
 function contrast(fg, bg) {
@@ -287,7 +287,7 @@ function contrast(fg, bg) {
 };
 
 function normalize(c) {
-    return (c / 100 + 0.027) / 1.14;
+  return (c / 100 + 0.027) / 1.14;
 }
 ```
 
