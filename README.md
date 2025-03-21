@@ -55,8 +55,8 @@ function contrast(fg, bg) {
 
 ## Migrating from WCAG 2.x
 
-- WCAG 2.x produces a ratio between 1:1 and 21:1. APCA produces a value roughly
-  between -100 and 100.
+- WCAG 2.x produces a ratio between 1:1 and 21:1. APCA produces a value between
+  -108 and 105.
 - Unlike WCAG 2.x, APCA reports different values when you switch foreground and
   background.
 - The result of APCA is negative for light text on dark background. You will
