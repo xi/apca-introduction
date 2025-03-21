@@ -53,7 +53,7 @@ function contrast(fg, bg) {
 
 ([Source](https://github.com/Myndex/SAPC-APCA/blob/master/documentation/APCA-W3-LaTeX.md))
 
-## Migrating from WCAG 2.x
+## Comparison to WCAG 2.x
 
 - WCAG 2.x produces a ratio between 1:1 and 21:1. APCA produces a value between
   -108 and 105.
