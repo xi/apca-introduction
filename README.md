@@ -7,9 +7,9 @@ is a new algorithm to estimate the visual contrast between two colors.
 It was developed to address some issues in earlier algorithms, especially for
 dark colors.
 
-APCA was created by Andrew Somers (Myndex) and is currently being proposed for
-the next major version of the [W3C Accessibility Guidelines
-(WCAG)](https://www.w3.org/TR/wcag-3.0/).
+APCA was created by Andrew Somers (Myndex) and was at some point in the
+discussion for the next major version of the [W3C Accessibility Guidelines
+(WCAG)](https://www.w3.org/TR/2021/WD-wcag-3.0-20211207/).
 
 An interactive demo is available at <https://xi.github.io/apca-introduction/tool/>.
 
@@ -81,9 +81,11 @@ Also see my [detailed analysis](analysis.md).
 ## Status
 
 WCAG is an important standard that is a normative part of many laws all over
-the world. If APCA will be part of WCAG 3.0 it will have a huge impact.
-However, currently both WCAG 3.0 and APCA are still in early development.
-Neither is officially recommended by the W3C yet.
+the world. If APCA will be part of WCAG 3 it will have a huge impact.
+However, currently both WCAG 3 and APCA are still in early development.
+Neither is officially recommended by the W3C yet. Also, any mention of APCA has
+been [removed](https://github.com/w3c/silver/commit/d5b364de1004d76caa7ddc42c0e48860fef3730d)
+from the WCAG 3 draft in 2023.
 
 Evaluating a contrast algorithm is extremly difficult because contrast
 perception varies from person to person and also depends on the lighting
