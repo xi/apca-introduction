@@ -70,7 +70,8 @@ Also see my [detailed analysis](analysis.md).
 
 ## Examples
 
-[![Visual comparison of WCAG 2.x and APCA](examples/screenshot.png)](https://xi.github.io/apca-introduction/examples/)
+[![Visual comparison of WCAG 2.x and APCA (light context)](examples/screenshot-light.png)](https://xi.github.io/apca-introduction/examples/)
+[![Visual comparison of WCAG 2.x and APCA (dark context)](examples/screenshot-dark.png)](https://xi.github.io/apca-introduction/examples/)
 
 ## Status
 
