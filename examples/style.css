@@ -1,11 +1,27 @@
+:root {
+	--tile: #eee;
+	--label: #555;
+	--bg: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		color-scheme: dark;
+		--bg: #222;
+		--tile: #000;
+		--label: #aaa;
+	}
+}
+
 body {
 	display: grid;
 	grid-template-columns: repeat(4, min-content);
 	grid-gap: 1rem;
+	background: var(--bg);
 }
 .example {
 	width: 16rem;
-	background: #eee;
+	background: var(--tile);
 	font-weight: bold;
 	line-height: 1.4;
 }
@@ -30,7 +46,7 @@ label {
 .label {
 	display: inline-block;
 	width: 4.2em;
-	color: #555;
+	color: var(--label);
 }
 
 output {
