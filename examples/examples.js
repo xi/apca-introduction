@@ -1,8 +1,8 @@
 import * as wcag from '../wcag2.js';
 import * as apca from '../apca.js';
 
-const WCAG_LABELS = ['×', '> 3', '> 4.5', '> 7'];
-const APCA_LABELS = ['×', '> 45', '> 60', '> 75'];
+const WCAG_LABELS = ['< 3', '> 3', '> 4.5', '> 7'];
+const APCA_LABELS = ['< 45', '> 45', '> 60', '> 75'];
 
 const COLORS = [
 	['#888888', '#000000', '#ffffff'],
