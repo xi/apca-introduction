@@ -97,11 +97,14 @@ For one it was born out of my personal frustration with the original
 documentation. Some important pieces of information (e.g. the actual algorithm)
 get buried under all that text.
 
-The original documentation also contains absolute statements like "APCA is
-perceptually uniform" and that the old algorithm produces "invalid results".
-This in my opinion is wrong as perceptual uniformity is an ideal that can never
-be reached completely. So I felt like there was room for a more balanced
-introduction.
+It also contains a lot of misleading statements. For example, it claims that
+the WCAG 2.x algorithm is not based on human perception (which it is) and that
+it produces "invalid results", which the author only substantiates by anecdotal
+evidence. So I felt like there was room for a more balanced introduction.
+
+Also, contributing upstream fixes is not an option because the author is
+hostile to a cricitcal examination of their work. You can find ample evidence
+of their behavior in the issue tracker of this repo.
 
 If you want to dig deeper, I recommend to start with the [original WCAG
 issue](https://github.com/w3c/wcag/issues/695) and the [documentation
