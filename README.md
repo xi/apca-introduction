@@ -51,13 +51,12 @@ function contrast(fg, bg) {
 }
 ```
 
-([Source](https://github.com/Myndex/SAPC-APCA/blob/master/documentation/APCA-W3-LaTeX.md))
+([Source](https://git.apcacontrast.com/documentation/README#basic-apca-math-in-latex))
 
 ## Thresholds
 
 The required contrast in APCA depends on font size and weight and is defined in
-a [table](https://www.myndex.com/APCA/) (under "APCA Font Table: Silver
-Level"):
+a [table](https://git.apcacontrast.com/documentation/README#font-use-lookup-tables):
 
 |      | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 |
 |------|-----|-----|-----|-----|-----|-----|-----|-----|-----|
