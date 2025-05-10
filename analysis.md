@@ -272,41 +272,36 @@ possible exponents, while APCA goes to the other (lighter) extreme. This
 is consistent with the observation that APCA reports lower contrast for
 darker colors.
 
-## How much contrast is enough contrast?
+## Thresholds: How much contrast is enough contrast?
 
 ### WCAG 2.x
 
-Smaller text is generally harder to read than bigger text. Generally
-speaking, smaller text requires more contrast to be legible.[^3] And
-body text can be read faster with better contrast.
+Smaller text requires more contrast to be legible[^3], so the thresholds should
+probably depend on font size.
 
-WCAG 2.x requires a contrast of at least 4.5:1 for regular text and 3:1
-for large text. If you aim for AAA conformance, the values are 7:1 and
-4.5:1.
+WCAG 2.x only distinguished two font sizes The thresholds are 4.5:1 for regular
+text and 3:1 for large text. If you aim for AAA conformance, the thresholds are
+7:1 and 4.5:1. How these thresholds were derived is not completely clear:
 
-How these values were derived is not completely clear:
-
-> There was some user testing associated with the validation of the 2.0
-> formula. I could not quickly find a cite for that. My recollection is
-> that the hard data pointed to a ratio of 4.65:1 as a defensible break
-> point. The working group was close to rounding that up to 5:1, just to
-> have round numbers. I successfully lobbied for 4.5:1 mostly because
-> (1) the empirical data was not overwhelmingly compelling, and (2)
-> 4.5:1 allowed the option for white and black (simultaneously) on a
-> middle gray.\
+> My recollection is that the hard data pointed to a ratio of 4.65:1 as a
+> defensible break point. The working group was close to rounding that up to
+> 5:1, just to have round numbers. I successfully lobbied for 4.5:1 mostly
+> because (1) the empirical data was not overwhelmingly compelling, and (2)
+> 4.5:1 allowed the option for white and black (simultaneously) on a middle
+> gray.\
 > -- <https://github.com/w3c/wcag/issues/695#issuecomment-484187617>
 
 [Large text] is defined as anything above 18 point or 14 point bold. The
-definition comes with a lot of notes that explain the limits of that
-approach though, e.g. that some fonts are extremely thin and that font
-size depends on user settings.
+definition comes with a lot of notes that explain the limits of that approach
+though, e.g. that some fonts are extremely thin and that font size depends on
+user settings.
 
 WCAG 2.x also comes with some rules that allow users to adapt font size
 to their needs: [1.4.4] requires that users can resize the text,
 [1.4.10] requires that they can zoom the whole page, and [1.4.12]
 requires that they can adjust text spacing.
 
-So in a way, WCAG 2.x side-stepps the issue by handing control over to
+So in a way, WCAG 2.x side-steps the issue by handing control over to
 the users who have all the facts.
 
 ### APCA
