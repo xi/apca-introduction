@@ -143,7 +143,7 @@ it produces "invalid results", which the author only substantiates by anecdotal
 evidence. So I felt like there was room for a more balanced introduction.
 
 Also, contributing upstream fixes is not an option because the author is
-hostile to a cricitcal examination of their work. You can find ample evidence
+hostile to a critical examination of their work. You can find ample evidence
 of their behavior in the issue tracker of this repo.
 
 If you want to dig deeper, I recommend to start with the [original WCAG
