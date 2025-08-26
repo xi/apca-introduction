@@ -313,7 +313,7 @@ different fonts. However, that system is complicated and leaves a lot of
 wiggle room.
 
 Unfortunately, there is next to no information on how that table was
-generated, so there is not mach I can say about it.
+generated, so there is not much I can say about it.
 
 ## Conclusion
 
